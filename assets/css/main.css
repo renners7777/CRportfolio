@@ -210,6 +210,36 @@ input, select, textarea {
 		clear: both;
 	}
 
+	.two{
+		background-image: url()
+	}
+
+	.three{
+
+	}
+
+	.four{
+
+	}
+
+	.five{
+
+	}
+
+	.six{
+		padding: 10px;
+		border: 5px;
+	}
+
+	.seven{
+		margin-top: 15px;
+		background-color: #212528;
+	}
+
+	.seven>h2{
+		text-decoration: none;
+	}
+
 /* Container */
 
 	.container {
