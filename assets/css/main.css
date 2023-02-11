@@ -211,19 +211,19 @@ input, select, textarea {
 	}
 
 	.two{
-		background-image: url()
+		background-color: grey;
 	}
 
 	.three{
-
+		background: #888;
 	}
 
 	.four{
-
+		background-color: #9ececc;
 	}
 
 	.five{
-
+		background-color:antiquewhite;
 	}
 
 	.six{
@@ -1866,7 +1866,7 @@ input, select, textarea {
 	form select,
 	form textarea {
 		position: relative;
-		-webkit-appearance: none;
+		appearance: none;
 		display: block;
 		border: 0;
 		outline: 0;
