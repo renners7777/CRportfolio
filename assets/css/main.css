@@ -210,8 +210,8 @@ input, select, textarea {
 		clear: both;
 	}
 
-	.two{
-		background-color: grey;
+	#about{
+		background-color:#ecf1f1;
 	}
 
 	.three{
@@ -219,7 +219,7 @@ input, select, textarea {
 	}
 
 	.four{
-		background-color: #9ececc;
+		background-color:whitesmoke;
 	}
 
 	.five{
@@ -227,9 +227,7 @@ input, select, textarea {
 	}
 
 	.six{
-		padding: 10px;
-		border: 5px;
-		background-image: url("images\andrew-neel-cckf4TsHAuw-unsplash.jpg");
+		background-color:#9ececc;
 	}
 
 	.seven{
