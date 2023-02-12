@@ -27,7 +27,8 @@ section, summary, time, mark, audio, video {
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;}
+	display: block;
+}
 
 body {
 	line-height: 1;
@@ -211,23 +212,23 @@ input, select, textarea {
 	}
 
 	#about{
-		background-color:#ecf1f1;
+		background-color:#b9cadc;
 	}
 
 	.three{
-		background: #888;
+		background: #eee2e2;
 	}
 
 	.four{
-		background-color:whitesmoke;
+		background-color:rgb(227, 195, 195);
 	}
 
 	.five{
-		background-color:antiquewhite;
+		background-color:rgb(223, 203, 178);
 	}
 
 	.six{
-		background-color:#9ececc;
+		background-color:#bfdddb;
 	}
 
 	.seven{
