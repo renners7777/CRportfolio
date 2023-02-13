@@ -240,6 +240,11 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
+	.testimonial1{
+		font-weight: 900;
+		color:#888;
+	}
+
 /* Container */
 
 	.container {
