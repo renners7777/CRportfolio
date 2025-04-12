@@ -1,0 +1,28 @@
+{
+  "name": "CRportfolio",
+  "version": "1.0.0",
+  "description": "A portfolio showcasing skills and projects of a freelance software engineer.",
+  "main": "src/main.jsx",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "freelance",
+    "software engineer"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "stripe": "^8.0.0"
+  },
+  "devDependencies": {
+    "vite": "^3.0.0"
+  }
+}
