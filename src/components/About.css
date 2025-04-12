@@ -40,10 +40,9 @@
   }
 
   .about-section .container {
-     /* Optional: Add flex layout for image and text side-by-side */
-     /* display: flex; */
-     /* align-items: center; */
-     /* gap: 2rem; */
+     display: flex; /* Add flex layout for image and text side-by-side */
+     align-items: center; /* Align items vertically */
+     gap: 2rem; /* Add spacing between items */
   }
 
   .about-section h2 {
