@@ -12,7 +12,7 @@ const Footer = () => {
                 <p>
                     {/* Use the variable holding the full URL */}
                     {/* Add target="_blank" and rel="noopener noreferrer" for external links */}
-                    <a href={privacyPolicyUrl} target="_blank" rel="noopener noreferrer">Privacy Policy</a> |
+                    <a href={privacyPolicyUrl} target="_blank" rel="noopener noreferrer">Privacy Policy</a>
                 </p>
             </div>
         </footer>
