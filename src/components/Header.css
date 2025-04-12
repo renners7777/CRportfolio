@@ -1,0 +1,90 @@
+/* filepath: src/components/Header.css */
+.header {
+  background-color: #343a40; /* Dark background */
+  padding: 1rem 0;
+  border-bottom: 3px solid #007bff; /* Accent border */
+}
+
+.header .container { /* Target container within header */
+   display: flex;
+   justify-content: space-between; /* Space out logo/nav */
+   align-items: center;
+   padding-top: 0; /* Remove container padding if header has its own */
+   padding-bottom: 0;
+}
+
+.header h1 {
+  margin: 0; /* Remove default heading margin */
+  font-size: 1.5rem;
+}
+
+.header h1 a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
+}
+
+.header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 1rem; /* Space between nav items */
+}
+
+.header nav a {
+  color: #adb5bd; /* Lighter gray for nav links */
+  font-weight: bold;
+  padding: 0.5rem; /* Add padding for easier clicking */
+  border-radius: 4px; /* Slightly rounded corners */
+}
+
+.header nav a:hover,
+.header nav a:focus,
+.header nav a.active { /* Style for active link */
+  color: #ffffff;
+  background-color: #495057; /* Darker background on hover/focus */
+  text-decoration: none;
+}
+ /* Improve focus visibility */
+.header nav a:focus-visible {
+    outline: 2px dashed #ffffff;
+    outline-offset: 2px;
+}
+
+
+/* Mobile Nav (Example - requires JS for toggle) */
+.nav-toggle {
+    display: none; /* Hide toggle on larger screens */
+    /* Add styles for button appearance */
+}
+
+@media (max-width: 767px) {
+    .header .container {
+        flex-direction: column; /* Stack logo and nav */
+        align-items: flex-start;
+    }
+
+    .header nav {
+       width: 100%;
+       /* Add styles to hide/show nav, e.g., display: none; */
+       /* You'll need JavaScript to toggle visibility */
+       margin-top: 0.5rem;
+    }
+
+    .header nav ul {
+        flex-direction: column; /* Stack nav items */
+        width: 100%;
+        gap: 0.5rem;
+    }
+     .header nav a {
+        display: block; /* Make links take full width */
+        text-align: center;
+     }
+
+    .nav-toggle {
+        display: block; /* Show toggle on small screens */
+        position: absolute; /* Position relative to header */
+        top: 1rem;
+        right: 1rem;
+    }
+}
