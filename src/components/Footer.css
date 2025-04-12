@@ -1,0 +1,34 @@
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 40px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer a {
+    color: #4caf50;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #81c784;
+}
+
+.footer .social-icons {
+    margin-top: 15px;
+}
+
+.footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.footer p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
