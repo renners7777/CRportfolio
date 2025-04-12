@@ -1,5 +1,5 @@
 {
-  "name": "CRportfolio",
+  "name": "crportfolio",
   "version": "1.0.0",
   "description": "A portfolio showcasing skills and projects of a freelance software engineer.",
   "main": "src/main.jsx",
@@ -15,7 +15,7 @@
     "freelance",
     "software engineer"
   ],
-  "author": "Your Name",
+  "author": "Chris Renshaw",
   "license": "MIT",
   "dependencies": {
     "react": "^18.0.0",

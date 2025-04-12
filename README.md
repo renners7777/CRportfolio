@@ -6,7 +6,7 @@ Welcome to the CRportfolio project! This portfolio showcases the skills and work
 
 The project is organized as follows:
 
-```
+```plaintext
 CRportfolio
 ├── public
 │   └── vite.svg
@@ -32,7 +32,7 @@ CRportfolio
 ├── package.json
 ├── vite.config.js
 └── README.md
-```
+```bash
 
 ## Features
 
@@ -47,31 +47,36 @@ CRportfolio
 To get started with the project, follow these steps:
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/yourusername/CRportfolio.git
+
+   ```bash
+   git clone [https://github.com/yourusername/CRportfolio.git](https://github.com/yourusername/CRportfolio.git)
    ```
 
-2. Navigate to the project directory:
-   ```
+1. Navigate to the project directory:
+
+   ```bash
    cd CRportfolio
    ```
 
-3. Install the dependencies:
-   ```
+2. Install the dependencies:
+
+   ```bash
    npm install
    ```
 
-4. Start the development server:
-   ```
+3. Start the development server:
+
+   ```bash
    npm run dev
    ```
 
-5. Open your browser and go to `http://localhost:3000` to view the portfolio.
+4. Open your browser and go to `http://localhost:3000` to view the portfolio.
 
 ## Deployment
 
 To build the project for production, run:
-```
+
+```bash
 npm run build
 ```
 
