@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+// Import Routes instead of Switch
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
@@ -14,13 +15,17 @@ const App = () => {
     <Router>
       <div className="app">
         <Header />
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/portfolio" component={PortfolioPage} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/skills" component={Skills} />
-        </Switch>
+        {/* Use Routes instead of Switch */}
+        <Routes>
+          {/* Use element prop with JSX, no exact needed */}
+          <Route path="/" element={<HomePage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/skills" element={<Skills />} />
+          {/* Optional: Add a catch-all route for 404 Not Found */}
+          {/* <Route path="*" element={<div>Page Not Found</div>} /> */}
+        </Routes>
         <Footer />
       </div>
     </Router>
