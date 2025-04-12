@@ -1,4 +1,5 @@
 import React from 'react';
+import './Skills.css'; // Import the CSS file
 
 const Skills = () => {
     const skills = [
@@ -11,18 +12,23 @@ const Skills = () => {
         'TypeScript',
         'Python',
         'SQL',
-        'GraphQL'
+        'GraphQL',
+        'Supabase', // Added Supabase
+        'Vite'      // Added Vite
     ];
 
     return (
-        <div className="skills">
-            <h2>My Skills</h2>
-            <ul>
-                {skills.map((skill, index) => (
-                    <li key={index}>{skill}</li>
-                ))}
-            </ul>
-        </div>
+        // Use a section tag
+        <section className="skills-section" id="skills"> {/* Added id */}
+            <div className="container">
+                <h2>My Skills</h2>
+                <ul className="skills-list">
+                    {skills.map((skill, index) => (
+                        <li key={index}>{skill}</li>
+                    ))}
+                </ul>
+            </div>
+        </section>
     );
 };
 

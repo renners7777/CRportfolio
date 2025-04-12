@@ -1,0 +1,56 @@
+.about-section {
+  padding: 2rem 0; /* Vertical padding */
+  background-color: #ffffff; /* White background for contrast */
+  border-bottom: 1px solid #e0e0e0; /* Subtle separator */
+  text-align: center; /* Center align content on mobile */
+}
+
+.about-section .container {
+  max-width: 800px; /* Limit content width for readability */
+}
+
+.about-section h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.about-section .profile-pic { /* Optional: If you add a profile picture */
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Circular image */
+  margin: 0 auto 1.5rem auto; /* Center and add space below */
+  object-fit: cover; /* Ensure image covers the area well */
+  border: 4px solid #007bff; /* Optional border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .about-section {
+    padding: 3rem 0;
+    text-align: left; /* Left align text on larger screens */
+  }
+
+  .about-section .container {
+     /* Optional: Add flex layout for image and text side-by-side */
+     /* display: flex; */
+     /* align-items: center; */
+     /* gap: 2rem; */
+  }
+
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .about-section p {
+    font-size: 1.15rem;
+  }
+}

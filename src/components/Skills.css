@@ -1,0 +1,60 @@
+.skills-section {
+  padding: 2rem 0;
+  background-color: #f8f9fa; /* Slightly off-white background */
+}
+
+.skills-section .container {
+  max-width: 900px;
+}
+
+.skills-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.skills-list {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap onto next line */
+  justify-content: center; /* Center items */
+  gap: 1rem; /* Space between items */
+}
+
+.skills-list li {
+  background-color: #007bff; /* Primary blue background */
+  color: #ffffff; /* White text */
+  padding: 0.75rem 1.5rem; /* Padding inside the skill tag */
+  border-radius: 25px; /* Pill shape */
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, background-color 0.2s ease;
+}
+
+.skills-list li:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  .skills-section {
+    padding: 3rem 0;
+  }
+
+  .skills-section h2 {
+    font-size: 2.5rem;
+  }
+
+  .skills-list {
+    gap: 1.5rem; /* Increase gap slightly */
+  }
+
+  .skills-list li {
+    font-size: 1.1rem;
+  }
+}
