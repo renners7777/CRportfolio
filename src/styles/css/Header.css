@@ -95,8 +95,19 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem; /* Adjust as needed */
-    /* ... other header styles */
+    background-color: #343a40; /* Example background */
+    border-bottom: 3px solid #007bff; /* Accent border */
+    position: relative; /* Needed for absolute positioning of mobile menu */
 }
+
+/* Add styles for your site title/logo if needed */
+.site-header .site-title a { /* Example */
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 
 /* --- Mobile Navigation Toggle (Hamburger) --- */
 .mobile-nav-toggle {
@@ -105,14 +116,18 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
-    z-index: 1000; /* Ensure it's above other content */
+    z-index: 1001; /* Ensure it's above the menu */
+    /* Style the lines */
+    position: absolute; /* Position it top right */
+    top: 1rem;
+    right: 1rem;
 }
 
 .mobile-nav-toggle .hamburger-line {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #333; /* Adjust color */
+    background-color: #ffffff; /* White lines on dark header */
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -128,6 +143,7 @@
     transform: translateY(-8px) rotate(-45deg);
 }
 
+
 /* --- Navigation Links --- */
 .main-navigation ul {
     list-style: none;
@@ -139,9 +155,26 @@
 
 .main-navigation a {
     text-decoration: none;
-    color: #333; /* Adjust color */
-    /* ... other link styles */
+    color: #adb5bd; /* Lighter gray for nav links */
+    font-weight: bold;
+    padding: 0.5rem; /* Add padding for easier clicking */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
+
+.main-navigation a:hover,
+.main-navigation a:focus,
+.main-navigation a.active { /* Style for active link */
+  color: #ffffff;
+  background-color: #495057; /* Darker background on hover/focus */
+  text-decoration: none;
+}
+ /* Improve focus visibility */
+.main-navigation a:focus-visible {
+    outline: 2px dashed #ffffff;
+    outline-offset: 2px;
+}
+
 
 /* --- Mobile Styles (using max-width) --- */
 @media (max-width: 767px) { /* Adjust breakpoint as needed */
@@ -151,14 +184,16 @@
 
     .main-navigation {
         /* Hide menu by default on mobile */
-        display: none; /* Or use transform, max-height, etc. */
-        position: absolute; /* Example: Position off-screen or overlay */
-        top: 60px; /* Adjust based on header height */
+        display: none;
+        /* Position it below the header */
+        position: absolute;
+        top: 100%; /* Place it right below the header */
         left: 0;
         right: 0;
-        background-color: #fff; /* Example background */
+        background-color: #343a40; /* Match header background or choose another */
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 1rem;
+        padding: 1rem 0; /* Vertical padding */
+        z-index: 1000;
     }
 
     .main-navigation.is-open {
@@ -168,6 +203,13 @@
     .main-navigation ul {
         flex-direction: column; /* Stack links vertically */
         align-items: center; /* Center links */
-        gap: 1rem; /* Space between links */
+        gap: 0.5rem; /* Adjust gap for vertical layout */
     }
+
+     .main-navigation a {
+        display: block; /* Make links take full width */
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem; /* Adjust padding for vertical layout */
+     }
 }

@@ -1,42 +1,50 @@
 // filepath: /home/chris/Documents/CRportfolio/src/components/Header.jsx
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom'; // Use NavLink for active styling
-import '../styles/css/Header.css'; // Import the CSS file
+import { NavLink } from 'react-router-dom'; // Use NavLink for active class styling
+import '../styles/css/Header.css'; // Import the cleaned CSS
 
 const Header = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State to track menu
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen); // Function to toggle the state
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+    // Optional: Close menu when a link is clicked (good UX)
+    const closeMobileMenu = () => {
+        setIsMobileMenuOpen(false);
     };
 
     return (
+        // Use .site-header
         <header className="site-header">
-            <div className="container">
-                <h1><Link to="/">Chris Renshaw</Link></h1>
+            <div className="container"> {/* Optional container for content width */}
+                <div className="site-title"> {/* Example logo/title */}
+                    <NavLink to="/">Chris Renshaw</NavLink>
+                </div>
 
-                {/* Hamburger Button (only visible on mobile via CSS) */}
+                {/* Use .mobile-nav-toggle */}
                 <button
                     type="button"
+                    // Use aria-label for accessibility
                     className="mobile-nav-toggle"
                     aria-label="Toggle navigation"
-                    aria-expanded={isMobileMenuOpen} // For accessibility
-                    onClick={toggleMobileMenu} // Attach the toggle function
+                    aria-expanded={isMobileMenuOpen}
+                    onClick={toggleMobileMenu}
                 >
                     <span className="hamburger-line"></span>
                     <span className="hamburger-line"></span>
                     <span className="hamburger-line"></span>
                 </button>
 
-                {/* Navigation Links Container */}
-                {/* Add a conditional class based on the state */}
+                {/* Use .main-navigation and conditional .is-open */}
                 <nav className={`main-navigation ${isMobileMenuOpen ? 'is-open' : ''}`}>
                     <ul>
-                        <li><NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
-                        <li><NavLink to="/portfolio" className={({ isActive }) => isActive ? 'active' : ''}>Portfolio</NavLink></li>
-                        <li><NavLink to="/about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
-                        <li><NavLink to="/skills" className={({ isActive }) => isActive ? 'active' : ''}>Skills</NavLink></li>
-                        <li><NavLink to="/contact" className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
+                        {/* Use NavLink and closeMobileMenu onClick */}
+                        <li><NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
+                        <li><NavLink to="/about" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
+                        <li><NavLink to="/portfolio" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Portfolio</NavLink></li>
+                        <li><NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
                     </ul>
                 </nav>
             </div>
