@@ -88,3 +88,86 @@
         right: 1rem;
     }
 }
+
+/* --- Site Header --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem; /* Adjust as needed */
+    /* ... other header styles */
+}
+
+/* --- Mobile Navigation Toggle (Hamburger) --- */
+.mobile-nav-toggle {
+    display: none; /* Hidden by default, shown via media query */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.mobile-nav-toggle .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* Adjust color */
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Optional: Animate hamburger to an 'X' when open */
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- Navigation Links --- */
+.main-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Default for desktop: row layout */
+    gap: 1.5rem; /* Space between links on desktop */
+}
+
+.main-navigation a {
+    text-decoration: none;
+    color: #333; /* Adjust color */
+    /* ... other link styles */
+}
+
+/* --- Mobile Styles (using max-width) --- */
+@media (max-width: 767px) { /* Adjust breakpoint as needed */
+    .mobile-nav-toggle {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .main-navigation {
+        /* Hide menu by default on mobile */
+        display: none; /* Or use transform, max-height, etc. */
+        position: absolute; /* Example: Position off-screen or overlay */
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        right: 0;
+        background-color: #fff; /* Example background */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 1rem;
+    }
+
+    .main-navigation.is-open {
+        display: block; /* Show menu when .is-open class is added */
+    }
+
+    .main-navigation ul {
+        flex-direction: column; /* Stack links vertically */
+        align-items: center; /* Center links */
+        gap: 1rem; /* Space between links */
+    }
+}
