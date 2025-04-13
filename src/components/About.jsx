@@ -5,9 +5,8 @@ const About = () => {
     return (
         <section className="about-section" id="about"> {/* Added id for potential navigation */}
             <div className="container">
-                {/* Optional: Add a profile picture */}
-                {/* <img src="/path/to/your/profile.jpg" alt="Chris Renshaw" className="profile-pic" /> */}
-                <h2>About Me</h2>
+                <img src="src/assets/ProfilePic1.jpeg" alt="Chris Renshaw" className="profile-pic" />
+                <h2>Profile</h2>
                 <p>
                     Hi, I'm Chris Renshaw, a passionate freelance software engineer specializing in building modern, responsive web applications. I help businesses bring their ideas to life with clean code and user-friendly designs.
                 </p>

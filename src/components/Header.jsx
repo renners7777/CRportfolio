@@ -42,7 +42,7 @@ const Header = () => {
                     <ul>
                         {/* Use NavLink and closeMobileMenu onClick */}
                         <li><NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
-                        <li><NavLink to="/about" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink></li>
+                        <li><NavLink to="/services" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
                         <li><NavLink to="/portfolio" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Portfolio</NavLink></li>
                         <li><NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
                     </ul>
