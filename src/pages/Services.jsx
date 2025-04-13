@@ -1,11 +1,12 @@
 // src/components/Services.jsx
 import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 import '../styles/css/Services.css'; // Make sure this path is correct
 
 // Placeholder image URLs from Unsplash (replace with specific, relevant images)
-const talkImageUrl = "https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"; // Example: People talking/meeting
-const buildImageUrl = "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"; // Example: Code on screen
-const launchImageUrl = "https://images.unsplash.com/photo-1522125670776-3c7abb882bc2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"; // Example: Laptop showing website/success
+const talkImageUrl = "src/assets/People-talking.avif"; // Example: People talking/meeting
+const buildImageUrl = "src/assets/Code-on-screen.avif"; // Example: Code on screen
+const launchImageUrl = "src/assets/website-success.avif"; // Example: Laptop showing website/success
 
 const Services = () => {
   return (
@@ -57,9 +58,10 @@ const Services = () => {
 
       <div className="call-to-action services-cta">
         <h3>Ready to get started?</h3>
-        <p>Let's chat about your project!</p>
-        {/* TODO: Add a button or link to your contact page/form */}
-        {/* <a href="/contact" className="cta-button">Contact Me</a> */}
+        <p>
+          Let's chat about your project!
+        </p>
+        <Link to="/contact" className="cta-button">Contact Me</Link>
       </div>
 
     </section>

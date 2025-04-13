@@ -104,3 +104,120 @@ body {
         font-size: 1rem;
     }
 }
+
+/* --- Services Section General Styles --- */
+.services-section {
+    padding: 3rem 0; /* Add vertical padding */
+}
+
+.services-section h2 {
+    text-align: center;
+    font-size: 2.2rem; /* Adjust size */
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.services-section .section-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 700px; /* Limit width for readability */
+    margin: 0 auto 3rem auto; /* Center and add bottom margin */
+}
+
+/* --- Service Steps Layout --- */
+.service-steps-simplified {
+    display: flex; /* Use flexbox for the container */
+    flex-direction: column; /* Stack steps vertically */
+    gap: 3rem; /* Space between each step */
+}
+
+.service-step {
+    /* Mobile First: Default to stacked layout */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between image and text on mobile */
+    background-color: var(--card-background, #ffffff); /* Use variable or default */
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--card-shadow, rgba(0, 0, 0, 0.05));
+    border: 1px solid var(--card-border, #e0e0e0);
+}
+
+.service-step-image {
+    width: 100%; /* Full width on mobile */
+    max-width: 400px; /* Optional: Limit max width on mobile */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area nicely */
+    border-radius: 6px; /* Slightly rounded corners */
+    margin: 0 auto; /* Center image on mobile */
+}
+
+.service-step-content h3 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.service-step-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 0.5rem; /* Space between paragraphs */
+}
+
+.service-step-content p strong {
+    color: var(--text-primary); /* Make 'You'll feel' stand out a bit */
+}
+
+/* --- Two-Column Layout for Larger Screens --- */
+@media (min-width: 768px) { /* Adjust breakpoint as needed */
+    .service-step {
+        flex-direction: row; /* Side-by-side layout */
+        align-items: center; /* Vertically align image and text */
+        gap: 2.5rem; /* Increase gap for wider screens */
+        padding: 2rem;
+    }
+
+    /* Set basis for columns */
+    .service-step-image,
+    .service-step-content {
+        flex: 1; /* Each takes up half the space */
+        min-width: 0; /* Prevent flex overflow issues */
+    }
+
+    .service-step-image {
+         max-width: 100%; /* Remove mobile max-width */
+         margin: 0; /* Remove mobile centering */
+    }
+
+    /* --- Alternating Layout --- */
+    /* Target the second step (and 4th, 6th, etc. if more were added) */
+    .service-step:nth-child(even) {
+        flex-direction: row-reverse; /* Reverse the order: text left, image right */
+    }
+}
+
+/* --- Call to Action --- */
+.services-cta {
+    text-align: center;
+    margin-top: 4rem; /* Space above CTA */
+    padding: 2rem;
+    background-color: var(--background-secondary, #f9f9f9); /* Use variable */
+    border-radius: 8px;
+}
+
+.services-cta h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.services-cta p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+/* Style your CTA button if you add one */
+/* .services-cta .cta-button { ... } */
