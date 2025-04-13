@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/css/About.css'; // Import the CSS file
+import '../styles/css/Home.css'; // Import the CSS file
 
-const About = () => {
+const Home = () => {
     return (
         <section className="about-section" id="about"> {/* Added id for potential navigation */}
             <div className="container">
@@ -19,4 +19,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Home;

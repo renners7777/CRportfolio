@@ -1,6 +1,6 @@
 // src/components/Services.jsx
 import React from 'react';
-import './Services.css'; // Assuming you have a CSS file for styling
+import 'src/styles/css/Services.css'; // Assuming you have a CSS file for styling
 
 const Services = () => {
   return (

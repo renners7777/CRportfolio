@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from './pages/HomePage';
 import PortfolioPage from './pages/PortfolioPage';
-import About from './components/About';
+import About from './components/Home';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
 import './styles/css/App.css';

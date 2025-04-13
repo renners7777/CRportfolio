@@ -1,12 +1,12 @@
 import React from 'react';
 import Skills from '../components/Skills.jsx';
-import About from '../components/About.jsx';
+import Home from '../components/Home.jsx';
 
 const HomePage = () => {
     return (
         <div>
             <main>
-                <About />
+                <Home />
                 <Skills />
             </main>
         </div>
