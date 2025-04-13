@@ -1,5 +1,5 @@
 import React from 'react';
-import './Skills.css'; // Import the CSS file
+import '../styles/css/Skills.css'; // Import the CSS file
 
 const Skills = () => {
     const skills = [
@@ -9,10 +9,11 @@ const Skills = () => {
         'CSS',
         'HTML',
         'Git',
-        'TypeScript',
-        'Python',
-        'SQL',
-        'GraphQL',
+        "GitHub",
+        "MongoDB",
+        'Express',
+        'REST APIs',
+        'Tailwind CSS',
         'Supabase', // Added Supabase
         'Vite'      // Added Vite
     ];

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Footer.css'; // Assuming you have or will create Footer.css for styling
+import '../styles/css/Footer.css'; // Assuming you have or will create Footer.css for styling
 
 const Footer = () => {
     // Replace with the actual URL of your privacy policy

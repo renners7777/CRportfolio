@@ -1,14 +1,14 @@
 import React from 'react';
 // Import Routes instead of Switch
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import PortfolioPage from './pages/PortfolioPage';
-import About from './components/About';
-import Contact from './components/Contact';
-import Skills from './components/Skills';
-import './App.css';
+import Header from "./components/Header.jsx";
+import Footer from "./components/Footer.jsx";
+import HomePage from './pages/HomePage.jsx';
+import PortfolioPage from './pages/PortfolioPage.jsx';
+import About from './components/About.jsx';
+import Contact from './components/Contact.jsx';
+import Skills from './components/Skills.jsx';
+import './styles/css/App.css';
 
 const App = () => {
   return (
