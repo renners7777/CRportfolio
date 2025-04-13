@@ -5,21 +5,21 @@ const PortfolioPage = () => {
     const portfolioItems = [
         {
             id: 1,
-            title: 'Project One',
-            description: 'Description of project one.',
-            link: 'https://example.com/project-one',
+            title: 'Church Music Project',
+            description: 'Producing a website to share music resources for church musicians.',
+            link: 'https://sttimssheffieldmusic.netlify.app/',
         },
         {
             id: 2,
-            title: 'Project Two',
-            description: 'Description of project two.',
-            link: 'https://example.com/project-two',
+            title: 'FCC Technical Documentation Page',
+            description: 'This is a clone of MDN HTML documentation page.',
+            link: 'https://fcc-technical-documentation-page-cr.netlify.app/',
         },
         {
             id: 3,
-            title: 'Project Three',
-            description: 'Description of project three.',
-            link: 'https://example.com/project-three',
+            title: 'Freelancing Website',
+            description: 'A simple freelancing website to showcase my skills and projects.',
+            link: 'https://fcc-crfreelancingpage.netlify.app/',
         },
     ];
 
