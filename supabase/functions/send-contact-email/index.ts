@@ -1,5 +1,5 @@
 // filepath: supabase/functions/send-contact-email/index.ts
-import { serve } from 'https://deno.land/std@0.168.0/http/server.ts'
+import { serve } from 'https://deno.land/std@0.170.0/http/server.ts'
 // NOTE: You might need to install an email client library
 // Example using Resend (install instructions may vary)
 // import { Resend } from 'resend'; // Hypothetical import
@@ -13,7 +13,7 @@ const TARGET_EMAIL = Deno.env.get('TARGET_CONTACT_EMAIL'); // Your email address
 
 console.log('Send Contact Email function booting up...');
 
-serve(async (req) => {
+serve(async (req: Request) => {
   // 1. Validate the request (ensure it's from Supabase trigger)
   // Supabase sends a POST request with the record data in the body
   if (req.method !== 'POST') {
@@ -80,7 +80,7 @@ serve(async (req) => {
 
   } catch (error) {
     console.error('Error processing request:', error);
-    return new Response(JSON.stringify({ success: false, error: error.message }), {
+    return new Response(JSON.stringify({ success: false, error: (error as Error).message }), {
       headers: { 'Content-Type': 'application/json' },
       status: 500,
     });
