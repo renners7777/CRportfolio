@@ -3,10 +3,10 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link
 import '../styles/css/Services.css'; // Make sure this path is correct
 
-// Placeholder image URLs from Unsplash (replace with specific, relevant images)
-const talkImageUrl = "src/assets/People-talking.avif"; // Example: People talking/meeting
-const buildImageUrl = "src/assets/Code-on-screen.avif"; // Example: Code on screen
-const launchImageUrl = "src/assets/website-success.avif"; // Example: Laptop showing website/success
+// Import the images
+import talkImageUrl from '../assets/People-talking.avif';
+import buildImageUrl from '../assets/Code-on-screen.avif';
+import launchImageUrl from '../assets/website-success.avif';
 
 const Services = () => {
   return (
