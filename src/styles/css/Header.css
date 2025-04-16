@@ -89,210 +89,225 @@
     }
 }
 
-/* --- Site Header --- */
+/* --- Site Header (Main Container) --- */
 .site-header {
+    /* Remove direct flex properties if any */
+    padding: 0; /* Apply padding to rows instead */
+    background-color: #343a40;
+    border-bottom: 3px solid #007bff;
+    position: relative; /* Keep for mobile menu positioning */
+}
+
+/* --- Top Row --- */
+.header-top-row {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-bottom: 1px solid #495057; /* Optional separator */
+}
+
+/* --- Bottom Row --- */
+.header-bottom-row {
+    padding: 0.5rem 1rem; /* Padding for the content inside */
+}
+
+/* Container within Bottom Row (Existing Flex Layout) */
+.header-bottom-row .header-container { /* Specificity */
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem; /* Adjust as needed */
-    background-color: #343a40; /* Example background */
-    border-bottom: 3px solid #007bff; /* Accent border */
-    position: relative; /* Needed for absolute positioning of mobile menu */
+    width: 100%;
+    gap: 20px; /* Use gap for spacing */
 }
 
-/* Add styles for your site title/logo if needed */
-.site-header .site-title a { /* Example */
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: bold;
+/* Adjustments to elements within the bottom row */
+
+.header-bottom-row .site-title { /* Specificity */
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-right: 15px; /* Add specific space after title */
+}
+.header-bottom-row .site-title a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-
-/* --- Mobile Navigation Toggle (Hamburger) --- */
-.mobile-nav-toggle {
-    display: none; /* Hidden by default, shown via media query */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001; /* Ensure it's above the menu */
-    /* Style the lines */
-    position: absolute; /* Position it top right */
-    top: 1rem;
-    right: 1rem;
+.header-bottom-row .main-navigation { /* Specificity */
+    flex-grow: 1; /* Allow nav to take available space */
+    /* Remove margin-right: auto; if previously used */
 }
-
-.mobile-nav-toggle .hamburger-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #ffffff; /* White lines on dark header */
-    margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Optional: Animate hamburger to an 'X' when open */
-.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-.mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-
-/* --- Navigation Links --- */
-.main-navigation ul {
+.header-bottom-row .main-navigation ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Default for desktop: row layout */
-    gap: 1.5rem; /* Space between links on desktop */
+    display: flex;
+    gap: 1.5rem;
+    justify-content: flex-start; /* Align nav items left */
 }
-
-.main-navigation a {
+.header-bottom-row .main-navigation a {
+    /* Keep existing link styles */
     text-decoration: none;
-    color: #adb5bd; /* Lighter gray for nav links */
+    color: #adb5bd;
     font-weight: bold;
-    padding: 0.5rem; /* Add padding for easier clicking */
-    border-radius: 4px; /* Slightly rounded corners */
+    padding: 0.5rem;
+    border-radius: 4px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-.main-navigation a:hover,
-.main-navigation a:focus,
-.main-navigation a.active { /* Style for active link */
+.header-bottom-row .main-navigation a:hover,
+.header-bottom-row .main-navigation a:focus,
+.header-bottom-row .main-navigation a.active {
   color: #ffffff;
-  background-color: #495057; /* Darker background on hover/focus */
-  text-decoration: none;
+  background-color: #495057;
 }
- /* Improve focus visibility */
-.main-navigation a:focus-visible {
+.header-bottom-row .main-navigation a:focus-visible {
     outline: 2px dashed #ffffff;
     outline-offset: 2px;
 }
 
 
-/* --- Mobile Styles (using max-width) --- */
-@media (max-width: 767px) { /* Adjust breakpoint as needed */
-    .mobile-nav-toggle {
-        display: block; /* Show hamburger on mobile */
-    }
-
-    .main-navigation {
-        /* Hide menu by default on mobile */
-        display: none;
-        /* Position it below the header */
-        position: absolute;
-        top: 100%; /* Place it right below the header */
-        left: 0;
-        right: 0;
-        background-color: #343a40; /* Match header background or choose another */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 1rem 0; /* Vertical padding */
-        z-index: 1000;
-    }
-
-    .main-navigation.is-open {
-        display: block; /* Show menu when .is-open class is added */
-    }
-
-    .main-navigation ul {
-        flex-direction: column; /* Stack links vertically */
-        align-items: center; /* Center links */
-        gap: 0.5rem; /* Adjust gap for vertical layout */
-    }
-
-     .main-navigation a {
-        display: block; /* Make links take full width */
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 1rem; /* Adjust padding for vertical layout */
-     }
-}
-
-/* Container for header content to use flexbox */
-.header-container {
+.header-bottom-row .social-icons-header { /* Specificity */
     display: flex;
-    justify-content: space-between; /* Pushes title left, nav/icons right */
     align-items: center;
-    width: 100%; /* Ensure it takes full width within the header padding */
+    gap: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+    /* Remove margin-left: auto; and padding-left if previously used */
 }
-
-/* Style for the social icons container in the header */
-.social-icons-header {
-    display: flex; /* Align icons horizontally */
-    align-items: center;
-    gap: 15px; /* Space between icons */
-    margin-left: auto; /* Push icons to the right, after navigation */
-    padding-left: 20px; /* Add some space between nav and icons */
-}
-
-.social-icons-header a {
-    color: #333; /* Adjust color as needed */
-    font-size: 20px; /* Adjust icon size */
-    display: inline-block; /* Helps with alignment and hover effects */
+.header-bottom-row .social-icons-header a {
+    color: #ffffff; /* White icons on dark background */
+    font-size: 20px;
+    display: inline-block;
     transition: color 0.3s ease;
 }
-
-.social-icons-header a:hover {
-    color: #007bff; /* Adjust hover color */
+.header-bottom-row .social-icons-header a:hover {
+    color: #00bfff; /* Lighter blue hover */
 }
 
-/* --- Responsive Adjustments --- */
 
-/* Hide header social icons on small screens if nav is taking over */
-@media (max-width: 768px) { /* Adjust breakpoint as needed */
-    .social-icons-header {
-        display: none; /* Hide header icons when mobile menu is likely active */
-        /* Alternatively, you could move them inside the mobile menu */
-    }
-
-    /* Ensure nav takes remaining space if icons are hidden */
-    .main-navigation {
-       /* Adjust flex properties if needed based on your mobile layout */
-    }
-
-    /* Ensure toggle is visible */
-    .mobile-nav-toggle {
-        display: block; /* Make sure it's visible */
-        order: 3; /* Place it last in the flex order if needed */
-        margin-left: 15px; /* Space from nav/title */
-    }
-
-     /* Adjust main navigation positioning for mobile */
-    .main-navigation {
-        order: 2; /* Place nav before the toggle button in flex order */
-        /* Keep existing mobile styles (position absolute, etc.) */
-    }
-
-    .site-title {
-        order: 1; /* Keep title first */
-        margin-right: auto; /* Push toggle button to the right */
-    }
-
-    .header-container {
-        /* Adjust justify-content if needed for mobile */
-        /* justify-content: flex-start; might be better if title is long */
-    }
+.header-bottom-row .mobile-nav-toggle { /* Specificity */
+    display: none; /* Hidden on desktop */
+    order: 3; /* Place last in flex order */
+    margin-left: auto; /* Push to the right */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+.header-bottom-row .mobile-nav-toggle .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Keep hamburger animation styles if you have them */
+.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Show toggle only on small screens */
-@media (min-width: 769px) { /* Adjust breakpoint to match above */
-    .mobile-nav-toggle {
+
+/* --- Mobile Styles --- */
+@media (max-width: 767px) { /* Adjust breakpoint */
+
+    .header-top-row {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .header-bottom-row {
+        padding: 0.5rem 1rem;
+    }
+
+    .header-bottom-row .header-container {
+        gap: 10px;
+    }
+
+    .header-bottom-row .site-title {
+        flex-grow: 1; /* Allow title to take space */
+        margin-right: 0; /* Remove desktop margin */
+    }
+    .header-bottom-row .site-title a {
+        font-size: 1.2rem; /* Smaller title */
+    }
+
+    .header-bottom-row .main-navigation {
+        /* Mobile menu styles */
+        position: absolute;
+        top: 100%; /* Below the entire header */
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        z-index: 1000;
         display: none;
+        flex-grow: 0; /* Reset grow */
     }
-    .main-navigation {
-        display: block !important; /* Ensure nav is visible */
-        position: static; /* Override mobile absolute positioning */
-        background: none;
-        /* Add other desktop nav styles */
+    .header-bottom-row .main-navigation.is-open {
+        display: block;
     }
-    .main-navigation ul {
-        display: flex;
-        gap: 20px; /* Spacing between nav items */
+    .header-bottom-row .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .header-bottom-row .main-navigation a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+    }
+
+    .header-bottom-row .social-icons-header {
+        display: none; /* Hide social icons */
+    }
+
+    .header-bottom-row .mobile-nav-toggle {
+        display: block; /* Show toggle */
+        flex-shrink: 0; /* Prevent shrinking */
     }
 }
+
+/* --- Desktop Styles (min-width) --- */
+@media (min-width: 768px) { /* Adjust breakpoint */
+
+    .header-bottom-row .main-navigation {
+        display: flex !important; /* Use flex for alignment */
+        align-items: center; /* Vertically align items if needed */
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        flex-grow: 1; /* Allow grow */
+    }
+    .header-bottom-row .main-navigation ul {
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center; /* Align items vertically */
+    }
+    .header-bottom-row .main-navigation a {
+        display: inline-block;
+        width: auto;
+        padding: 0.5rem;
+    }
+
+    .header-bottom-row .social-icons-header {
+        display: flex; /* Show social icons */
+    }
+
+    .header-bottom-row .mobile-nav-toggle {
+        display: none; /* Hide toggle */
+    }
+}
+
+/* Clean up any old, conflicting rules outside of the new structure */
+/* e.g., remove styles targeting .site-header > .container directly */
