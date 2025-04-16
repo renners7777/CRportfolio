@@ -9,10 +9,10 @@ const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // URLs for social links
-    const linkedinUrl = 'https://www.linkedin.com/in/chris-renshaw-409a2023b/';
-    const githubUrl = 'https://github.com/chrisrenshaw66';
-    const twitterUrl = 'https://twitter.com/chrisrenshaw66';
-    const peerlistUrl = 'https://peerlist.io/chrisrenshaw';
+    const linkedinUrl = 'https://www.linkedin.com/in/chris-renshaw-renners7777/';
+    const githubUrl = 'https://github.com/renners7777';
+    const twitterUrl = 'https://x.com/renners7777';
+    const peerlistUrl = 'https://peerlist.io/renners7777';
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
