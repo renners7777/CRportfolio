@@ -32,10 +32,7 @@ const Header = () => {
             {/* Bottom Row - Contains the previous layout */}
             <div className="header-bottom-row">
                 <div className="container header-container"> {/* Use existing container for flex */}
-                    <div className="site-title">
-                        {/* You might want to change this link text/content now */}
-                        <NavLink to="/">Chris Renshaw</NavLink>
-                    </div>
+                    {/* Site Title Removed From Here */}
 
                     {/* Navigation */}
                     <nav className={`main-navigation ${isMobileMenuOpen ? 'is-open' : ''}`}>
