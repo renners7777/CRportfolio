@@ -213,3 +213,86 @@
         padding: 0.75rem 1rem; /* Adjust padding for vertical layout */
      }
 }
+
+/* Container for header content to use flexbox */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Pushes title left, nav/icons right */
+    align-items: center;
+    width: 100%; /* Ensure it takes full width within the header padding */
+}
+
+/* Style for the social icons container in the header */
+.social-icons-header {
+    display: flex; /* Align icons horizontally */
+    align-items: center;
+    gap: 15px; /* Space between icons */
+    margin-left: auto; /* Push icons to the right, after navigation */
+    padding-left: 20px; /* Add some space between nav and icons */
+}
+
+.social-icons-header a {
+    color: #333; /* Adjust color as needed */
+    font-size: 20px; /* Adjust icon size */
+    display: inline-block; /* Helps with alignment and hover effects */
+    transition: color 0.3s ease;
+}
+
+.social-icons-header a:hover {
+    color: #007bff; /* Adjust hover color */
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Hide header social icons on small screens if nav is taking over */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+    .social-icons-header {
+        display: none; /* Hide header icons when mobile menu is likely active */
+        /* Alternatively, you could move them inside the mobile menu */
+    }
+
+    /* Ensure nav takes remaining space if icons are hidden */
+    .main-navigation {
+       /* Adjust flex properties if needed based on your mobile layout */
+    }
+
+    /* Ensure toggle is visible */
+    .mobile-nav-toggle {
+        display: block; /* Make sure it's visible */
+        order: 3; /* Place it last in the flex order if needed */
+        margin-left: 15px; /* Space from nav/title */
+    }
+
+     /* Adjust main navigation positioning for mobile */
+    .main-navigation {
+        order: 2; /* Place nav before the toggle button in flex order */
+        /* Keep existing mobile styles (position absolute, etc.) */
+    }
+
+    .site-title {
+        order: 1; /* Keep title first */
+        margin-right: auto; /* Push toggle button to the right */
+    }
+
+    .header-container {
+        /* Adjust justify-content if needed for mobile */
+        /* justify-content: flex-start; might be better if title is long */
+    }
+}
+
+/* Show toggle only on small screens */
+@media (min-width: 769px) { /* Adjust breakpoint to match above */
+    .mobile-nav-toggle {
+        display: none;
+    }
+    .main-navigation {
+        display: block !important; /* Ensure nav is visible */
+        position: static; /* Override mobile absolute positioning */
+        background: none;
+        /* Add other desktop nav styles */
+    }
+    .main-navigation ul {
+        display: flex;
+        gap: 20px; /* Spacing between nav items */
+    }
+}
