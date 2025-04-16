@@ -66,3 +66,5 @@ word-break: break-word !important;
 };
 
 export default PrivacyPolicyContent;
+// This component renders the privacy policy content as HTML. It uses dangerouslySetInnerHTML to inject the HTML directly into the component.
+// This is generally safe if you control the content, but be cautious with user-generated content to avoid XSS attacks.
