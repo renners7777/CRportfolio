@@ -7,3 +7,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+  [[redirects]]
+  from = "https://www.chrisrenshawportfolio.netlify.app"
+  to = "https://www.chrisrenshaw.net"
+  status = 301
+  force = true
