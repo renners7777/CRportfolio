@@ -1,6 +1,6 @@
 // filepath: /home/chris/Documents/CRportfolio/src/components/Contact.jsx
-import React, { useState, useEffect, useRef } from 'react'; // Added useRef
-import ReCAPTCHA from "react-google-recaptcha"; // Import reCAPTCHA
+import React, { useState, useEffect, useRef } from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
 import '../styles/css/Contact.css';
 
 const Contact = () => {
@@ -47,27 +47,14 @@ const Contact = () => {
         }
 
         setIsSubmitting(true);
-        setSubmitStatus({ message: 'Sending...', type: 'info' });
-
-        // Ensure this matches the function you KEPT (e.g., 'contact-form')
-        const functionUrl = `https://hshqypyjpxdvrpyjiixc.supabase.co/functions/v1/contact-form`;
+        setSubmitStatus({ message: 'Processing...', type: 'info' });
 
         try {
-            const response = await fetch(functionUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ ...formData, captchaToken }),
-            });
+            console.log("Form Data:", formData);
+            console.log("Captcha Token:", captchaToken);
+            await new Promise(resolve => setTimeout(resolve, 1500));
 
-            const result = await response.json();
-
-            if (!response.ok) {
-                throw new Error(result.error || `HTTP error! status: ${response.status}`);
-            }
-
-            setSubmitStatus({ message: 'Message sent successfully!', type: 'success' });
+            setSubmitStatus({ message: 'Message sent successfully! (Placeholder)', type: 'success' });
             setFormData({ name: '', email: '', message: '' });
             setCaptchaToken(null);
             recaptchaRef.current?.reset();
