@@ -49,6 +49,7 @@ const Contact = () => {
         setIsSubmitting(true);
         setSubmitStatus({ message: 'Sending...', type: 'info' });
 
+        // Ensure this matches the function you KEPT (e.g., 'contact-form')
         const functionUrl = `https://hshqypyjpxdvrpyjiixc.supabase.co/functions/v1/contact-form`;
 
         try {
