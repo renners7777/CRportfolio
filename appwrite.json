@@ -54,7 +54,7 @@
             "timeout": 15,
             "enabled": true,
             "logging": true,
-            "entrypoint": "src/main.js",
+            "entrypoint": "src/index.js",
             "commands": "npm install",
             "path": "functions/contact-form-function"
         }
