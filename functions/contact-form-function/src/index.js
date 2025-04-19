@@ -115,7 +115,7 @@ export default async ({ req, res, log, error }) => {
 
     try {
       const emailPayload = {
-        from: 'Chris Renshaw Portfolio <noreply@chrisrenshaw.net>', // <-- CHANGE THIS
+        from: 'Chris Renshaw Portfolio <chris@chrisrenshaw.net>', // <-- CHANGE THIS
         to: [recipientEmail],
         subject: `New Contact Form Message from ${name}`,
         html: `<p>You received a new message:</p><ul><li><strong>Name:</strong> ${name}</li><li><strong>Email:</strong> ${email}</li></ul><p><strong>Message:</strong></p><p>${message}</p>`,
