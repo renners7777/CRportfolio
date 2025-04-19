@@ -48,7 +48,8 @@
             ],
             "events": [],
             "scopes": [
-                "users.read"
+                "users.read",
+                "documents.write"
             ],
             "schedule": "",
             "timeout": 15,
