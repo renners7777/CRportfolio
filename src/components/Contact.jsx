@@ -50,7 +50,7 @@ const Contact = () => {
         setIsSubmitting(true);
         setSubmitStatus({ message: 'Processing...', type: 'info' });
 
-        const appwriteFunctionId = '6802e7662ab786ed85d2'; // <-- Replace with your actual Appwrite Function ID
+        const appwriteFunctionId = '6802e4a8000ecdcd6e33'; // <-- Replace with your actual Appwrite Function ID
 
         try {
             console.log("Calling Appwrite function:", appwriteFunctionId);
