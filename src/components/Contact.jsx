@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReCAPTCHA from "react-google-recaptcha";
 import '../styles/css/Contact.css';
+import { functions } from '../appwriteClient'; // Import the Appwrite functions service
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -49,15 +50,41 @@ const Contact = () => {
         setIsSubmitting(true);
         setSubmitStatus({ message: 'Processing...', type: 'info' });
 
-        try {
-            console.log("Form Data:", formData);
-            console.log("Captcha Token:", captchaToken);
-            await new Promise(resolve => setTimeout(resolve, 1500));
+        const appwriteFunctionId = '6802e7662ab786ed85d2'; // <-- Replace with your actual Appwrite Function ID
 
-            setSubmitStatus({ message: 'Message sent successfully! (Placeholder)', type: 'success' });
-            setFormData({ name: '', email: '', message: '' });
-            setCaptchaToken(null);
-            recaptchaRef.current?.reset();
+        try {
+            console.log("Calling Appwrite function:", appwriteFunctionId);
+            console.log("Payload:", { ...formData, captchaToken });
+
+            const result = await functions.createExecution(
+                appwriteFunctionId,
+                JSON.stringify({ ...formData, captchaToken }),
+                false
+            );
+
+            console.log("Appwrite function result:", result);
+
+            if (result.status === 'completed') {
+                let responseBody = {};
+                try {
+                    responseBody = JSON.parse(result.responseBody);
+                } catch (parseError) {
+                    console.warn("Could not parse function response body as JSON:", result.responseBody);
+                }
+
+                if (result.responseStatusCode === 200 || result.responseStatusCode === 201) {
+                    setSubmitStatus({ message: responseBody.message || 'Message sent successfully!', type: 'success' });
+                    setFormData({ name: '', email: '', message: '' });
+                    setCaptchaToken(null);
+                    recaptchaRef.current?.reset();
+                } else {
+                    throw new Error(responseBody.error || `Function returned status ${result.responseStatusCode}`);
+                }
+
+            } else {
+                console.error("Appwrite function execution failed:", result.stderr || result.responseBody);
+                throw new Error(result.stderr || 'Function execution failed. Check function logs.');
+            }
 
         } catch (error) {
             console.error('Submission error:', error);
