@@ -58,7 +58,7 @@ const PortfolioPage = () => {
             title: 'UK Social Work Legislation Chatbot',
             description: 'Currently in development, this chatbot will provide information on UK social work legislation.',
             link: 'https://uk-socialwork-legislation-chatbot.netlify.app/',
-            imageUrl: 'https://via.placeholder.com/150', // Placeholder image
+            imageUrl: image6, // Placeholder image
         },
     ];
 
