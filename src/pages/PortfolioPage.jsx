@@ -9,7 +9,7 @@ import htmlTechnicalPageClone from '../assets/Screenshot 2025-04-13 at 16-02-12 
 import christmasAPIImage from '../assets/christmasAPIImage.avif';
 import crEmojisAPI from '../assets/CR-emojis.png';
 import crGuideToSheffield from '../assets/CRGuideToSheffield.png'; 
-import image6 from '#'; // Replace with actual path or import
+// import image6 from '#'; // Replace with actual path or import
 
 
 const PortfolioPage = () => {
@@ -58,7 +58,7 @@ const PortfolioPage = () => {
             title: 'UK Social Work Legislation Chatbot',
             description: 'Currently in development, this chatbot will provide information on UK social work legislation.',
             link: 'https://uk-socialwork-legislation-chatbot.netlify.app/',
-            imageUrl: image6, // Placeholder image
+            imageUrl: 'https://via.placeholder.com/150', // Placeholder image
         },
     ];
 
