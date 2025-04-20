@@ -8,8 +8,8 @@ import churchMusicImage from '../assets/photo-1663619079733-c22429418bc2.avif';
 import htmlTechnicalPageClone from '../assets/Screenshot 2025-04-13 at 16-02-12 HTML technical documentation page.png';
 import christmasAPIImage from '../assets/christmasAPIImage.avif';
 import crEmojisAPI from '../assets/CR-emojis.png';
-import image5 from '../assets/placeholder5.png'; 
-import image6 from '../assets/placeholder6.png'; 
+import crGuideToSheffield from '../assets/CRGuideToSheffield.png'; 
+import image6 from '#{path_to_image_6}'; // Replace with actual path or import
 
 
 const PortfolioPage = () => {
@@ -48,16 +48,16 @@ const PortfolioPage = () => {
         },
         {
             id: 5,
-            title: 'Project 5',
-            description: 'Description for project 5.',
-            link: '#',
-            imageUrl: 'https://via.placeholder.com/150', // Placeholder image
+            title: 'CR Guide to Sheffield',
+            description: 'A guide to Sheffield, including places to visit and things to do.',
+            link: 'https://crsheffieldhometown.netlify.app/',
+            imageUrl: crGuideToSheffield, // Placeholder image
         },
         {
             id: 6,
-            title: 'Project 6',
-            description: 'Description for project 6.',
-            link: '#',
+            title: 'UK Social Work Legislation Chatbot',
+            description: 'Currently in development, this chatbot will provide information on UK social work legislation.',
+            link: 'https://uk-socialwork-legislation-chatbot.netlify.app/',
             imageUrl: 'https://via.placeholder.com/150', // Placeholder image
         },
     ];
