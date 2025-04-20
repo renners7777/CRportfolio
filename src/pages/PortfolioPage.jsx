@@ -7,6 +7,10 @@ import churchMusicImage from '../assets/photo-1663619079733-c22429418bc2.avif';
 // Import other images similarly if they are in src/assets
 import htmlTechnicalPageClone from '../assets/Screenshot 2025-04-13 at 16-02-12 HTML technical documentation page.png';
 import christmasAPIImage from '../assets/christmasAPIImage.avif';
+import crEmojisAPI from '../assets/CR-emojis.png';
+import image5 from '../assets/placeholder5.png'; 
+import image6 from '../assets/placeholder6.png'; 
+
 
 const PortfolioPage = () => {
     const portfolioItems = [
@@ -34,7 +38,28 @@ const PortfolioPage = () => {
             // Use imported variable or placeholder/public path
             imageUrl: christmasAPIImage, // Replace if using import: image3
         },
-        // ... other items
+        // Add more items as needed
+        {
+            id: 4,
+            title: 'CR Emojis',
+            description: 'An API that allows you to add your own emojis to your projects.',
+            link: 'https://cr-emojis.netlify.app/',
+            imageUrl: crEmojisAPI, 
+        },
+        {
+            id: 5,
+            title: 'Project 5',
+            description: 'Description for project 5.',
+            link: '#',
+            imageUrl: 'https://via.placeholder.com/150', // Placeholder image
+        },
+        {
+            id: 6,
+            title: 'Project 6',
+            description: 'Description for project 6.',
+            link: '#',
+            imageUrl: 'https://via.placeholder.com/150', // Placeholder image
+        },
     ];
 
     return (
