@@ -6,7 +6,7 @@ import '../styles/css/PortfolioPage.css'; // Corrected path assuming CSS is in p
 import churchMusicImage from '../assets/photo-1663619079733-c22429418bc2.avif';
 // Import other images similarly if they are in src/assets
 import htmlTechnicalPageClone from '../assets/Screenshot 2025-04-13 at 16-02-12 HTML technical documentation page.png';
-import freelancingTestSite from '../assets/Screenshot 2025-04-13 at 16-04-01 crFreelancingSite.png';
+import christmasAPI from 'src/assets/christmasAPIImage.avif';
 
 const PortfolioPage = () => {
     const portfolioItems = [
@@ -28,11 +28,11 @@ const PortfolioPage = () => {
         },
         {
             id: 3,
-            title: 'Freelancing Website',
-            description: 'A simple freelancing website to showcase my skills and projects.',
-            link: 'https://fcc-crfreelancingpage.netlify.app/',
+            title: 'Christmas API',
+            description: 'An API that generates Christmas-themed data.',
+            link: 'https://christmas-api.netlify.app/',
             // Use imported variable or placeholder/public path
-            imageUrl: freelancingTestSite, // Replace if using import: image3
+            imageUrl: christmasAPI, // Replace if using import: image3
         },
         // ... other items
     ];
