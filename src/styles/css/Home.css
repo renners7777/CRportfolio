@@ -7,6 +7,11 @@
 
 .about-section .container {
   max-width: 800px; /* Limit content width for readability */
+  display: flex; /* Add flex layout for image and text side-by-side */
+  flex-direction: column; /* Change from row */
+  align-items: center; /* Center items horizontally in the column */
+  text-align: center; /* Center text within items */
+  /* Adjust padding, margin, etc. as needed */
 }
 
 .about-section h2 {

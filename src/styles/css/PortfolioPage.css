@@ -1,105 +1,116 @@
+/* --- SCOPED PORTFOLIO SECTION STYLES --- */
+
+/* Remove or comment out .portfolio-page styles as they are too general */
+/*
 .portfolio-page {
-  padding: 2rem 0; /* Vertical padding */
+  padding: 2rem 0;
+}
+*/
+
+/* Scope the h2 style */
+.portfolio-section h2 {
+  /* text-align: center; /* Centering is handled inline in HomePage.jsx */
+  font-size: 2rem; /* Keep or adjust as needed */
+  /* color: #333; /* This might conflict with dark theme, consider removing or using a variable */
+  margin-bottom: 2rem; /* Keep or adjust as needed */
 }
 
-.portfolio-page h2 {
-  text-align: center;
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 2rem;
-}
-
-/* Grid layout for portfolio items */
-.portfolio-grid {
+/* Scope the grid layout */
+.portfolio-section .portfolio-grid {
   display: grid;
-  /* Start with 1 column on mobile */
-  grid-template-columns: 1fr;
-  gap: 1.5rem; /* Space between grid items */
+  grid-template-columns: 1fr; /* Start with 1 column */
+  gap: 1.5rem;
 }
 
-/* Styling for individual PortfolioItem components */
-/* Note: Ideally, these styles might live in PortfolioItem.css */
-.portfolio-item {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
+/* Scope the item styling */
+.portfolio-section .portfolio-item {
+  background-color: #ffffff; /* Might need adjustment for dark theme */
+  border: 1px solid #e0e0e0; /* Might need adjustment for dark theme */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  overflow: hidden; /* Ensure image corners are rounded */
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
+  flex-direction: column;
 }
 
-.portfolio-item:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
+.portfolio-section .portfolio-item:hover {
+  transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.portfolio-image {
+/* Scope image styling */
+.portfolio-section .portfolio-image {
   width: 100%;
-  height: 200px; /* Fixed height for consistency */
-  object-fit: cover; /* Cover the area, might crop */
-  display: block; /* Remove extra space below image */
-  background-color: #f0f0f0; /* Placeholder color if image is missing */
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background-color: #f0f0f0; /* Placeholder color */
 }
 
-.portfolio-title {
+/* Scope title styling */
+.portfolio-section .portfolio-title {
   font-size: 1.25rem;
-  color: #333;
-  margin: 1rem 1rem 0.5rem 1rem; /* Top, R/L, Bottom */
+  color: #333; /* Might need adjustment for dark theme */
+  margin: 1rem 1rem 0.5rem 1rem;
 }
 
-.portfolio-description {
+/* Scope description styling */
+.portfolio-section .portfolio-description {
   font-size: 0.95rem;
-  color: #555;
+  color: #555; /* Might need adjustment for dark theme */
   line-height: 1.6;
-  margin: 0 1rem 1rem 1rem; /* R/L, Bottom */
-  flex-grow: 1; /* Allow description to push link down */
+  margin: 0 1rem 1rem 1rem;
+  flex-grow: 1;
 }
 
-.portfolio-link {
-  display: inline-block; /* Allow padding and margin */
-  background-color: #007bff;
+/* Scope link styling */
+.portfolio-section .portfolio-link {
+  display: inline-block;
+  background-color: #007bff; /* Consider using CSS variables like var(--primary-color) */
   color: #ffffff;
   text-align: center;
   padding: 0.75rem 1rem;
-  margin: 0 1rem 1rem 1rem; /* R/L, Bottom */
+  margin: 0 1rem 1rem 1rem;
   border-radius: 4px;
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.2s ease;
-  align-self: flex-start; /* Align button to the start within the flex column */
+  align-self: flex-start;
 }
 
-.portfolio-link:hover,
-.portfolio-link:focus {
-  background-color: #0056b3;
+.portfolio-section .portfolio-link:hover,
+.portfolio-section .portfolio-link:focus {
+  background-color: #0056b3; /* Consider using var(--secondary-color) */
   color: #ffffff;
   text-decoration: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
-.portfolio-link:focus-visible {
+.portfolio-section .portfolio-link:focus-visible {
     outline: 2px dashed #0056b3;
 }
 
 
-/* --- Responsive Adjustments --- */
+/* --- SCOPED Responsive Adjustments --- */
 
-/* Medium screens (tablets) - 2 columns */
 @media (min-width: 768px) {
-  .portfolio-page h2 {
+  /* Scope h2 adjustments */
+  .portfolio-section h2 {
     font-size: 2.5rem;
   }
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  /* Scope grid adjustments */
+  .portfolio-section .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
 }
 
-/* Large screens (desktops) - 3 columns */
 @media (min-width: 1024px) {
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  /* Scope grid adjustments */
+  .portfolio-section .portfolio-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* --- END SCOPED PORTFOLIO SECTION STYLES --- */

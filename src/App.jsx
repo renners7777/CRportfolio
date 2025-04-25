@@ -1,14 +1,10 @@
 import React from 'react';
-// Import Routes instead of Switch
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomePage from './pages/HomePage';
-import PortfolioPage from './pages/PortfolioPage';
-import Services from './pages/Services';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Skills from './components/Skills';
+import HomePage from './pages/HomePage'; // Keep - This will now contain Hero, Skills, Portfolio
+import Services from './pages/Services'; // Keep
+import Contact from './components/Contact'; // Keep - Assuming this is your Contact Page component
 import './styles/css/App.css';
 
 const App = () => {
@@ -16,18 +12,22 @@ const App = () => {
     <Router>
       <div className="app">
         <Header />
-        {/* Use Routes instead of Switch */}
         <Routes>
-          {/* Use element prop with JSX, no exact needed */}
+          {/* Route for the combined HomePage (Hero, Skills, Portfolio) */}
           <Route path="/" element={<HomePage />} />
-          <Route path="/portfolio" element={<PortfolioPage />} />
+
+          {/* Route for Services */}
           <Route path="/services" element={<Services />} />
-          {/* Use element prop with JSX */}
-          {/* You can also use the same component for multiple routes if needed */}
-          <Route path="/portfolio/:id" element={<PortfolioPage />} />
-          <Route path="/home" element={<Home />} />
+
+          {/* Route for Contact */}
           <Route path="/contact" element={<Contact />} />
-          <Route path="/skills" element={<Skills />} />
+
+          {/* Remove old routes */}
+          {/* <Route path="/portfolio" element={<PortfolioPage />} /> */}
+          {/* <Route path="/portfolio/:id" element={<PortfolioPage />} /> */}
+          {/* <Route path="/home" element={<Home />} /> */}
+          {/* <Route path="/skills" element={<Skills />} /> */}
+
           {/* Optional: Add a catch-all route for 404 Not Found */}
           {/* <Route path="*" element={<div>Page Not Found</div>} /> */}
         </Routes>
