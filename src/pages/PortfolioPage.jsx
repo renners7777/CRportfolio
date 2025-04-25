@@ -10,6 +10,7 @@ import christmasAPIImage from '../assets/christmasAPIImage.avif';
 import crEmojisAPI from '../assets/CR-emojis.png';
 import crGuideToSheffield from '../assets/CRGuideToSheffield.png'; 
 // import image6 from '#'; // Replace with actual path or import
+import socialCareTestSiteImage from '../assets/photo-1464998857633-50e59fbf2fe6.avif'; // Placeholder image
 
 
 const PortfolioPage = () => {
@@ -59,6 +60,13 @@ const PortfolioPage = () => {
             description: 'Currently in development, this chatbot will provide information on UK social work legislation.',
             link: '#',
             imageUrl: 'https://via.placeholder.com/150', // Placeholder image
+        },
+        {
+            id: 7,
+            title: 'Social Care Test Site',
+            description: 'Made using Bolt.new, this site is a test site for social care.',
+            link: 'https://bolt-socialcaretestsite.netlify.app/',
+            imageUrl: socialCareTestSiteImage, // Placeholder image
         },
     ];
 
