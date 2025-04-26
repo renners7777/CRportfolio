@@ -91,6 +91,23 @@
     outline: 2px dashed #0056b3;
 }
 
+/* Example style for the show more button */
+.show-more-button {
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+  background-color: var(--secondary-color);
+}
+
 
 /* --- SCOPED Responsive Adjustments --- */
 

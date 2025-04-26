@@ -124,9 +124,6 @@
 
 /* Adjustments to elements within the bottom row */
 
-.header-bottom-row .main-navigation { /* Specificity */
-    /* No specific flex properties needed, let justify-content handle it */
-}
 .header-bottom-row .main-navigation ul {
     list-style: none;
     padding: 0;
