@@ -4,105 +4,90 @@
   padding-bottom: 80px;
 }
 
-/* Ensure main heading uses text color */
 .contact-section > h2 {
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--text-color); /* Explicitly set */
-  transition: color 0.3s ease;
+  color: var(--text-color); /* Use variable */
+  transition: color 0.2s ease;
 }
 
-/* Ensure intro paragraph uses text color */
 .contact-section .contact-intro {
   text-align: center;
   margin-bottom: 2.5rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  color: var(--text-color); /* Explicitly set */
-  transition: color 0.3s ease;
+  color: var(--text-color); /* Use variable */
+  transition: color 0.2s ease;
 }
 
-/* Submit status styles - Apply theme variables */
-.submit-status {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    font-size: 14px;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
+/* --- Form Wrapper --- */
+.form-wrapper {
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+  padding: 2rem;
+  background-color: var(--card-background); /* Use variable */
+  border: 1px solid var(--card-border);    /* Use variable */
+  border-radius: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.submit-status.success {
-    /* Define success colors using variables or keep specific ones if preferred */
-    background-color: #d4edda; /* Consider making these variables */
-    color: #155724;
-    border-color: #c3e6cb;
-}
-
-.submit-status.error {
-    /* Define error colors using variables or keep specific ones if preferred */
-    background-color: #f8d7da; /* Consider making these variables */
-    color: #721c24;
-    border-color: #f5c6cb;
-}
-
-/* Fix form group layout - Ensure this targets labels inside .form-wrapper */
 .form-wrapper .form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: var(--text-color); /* Already set */
-  transition: color 0.3s ease;
+  color: var(--text-color); /* Use variable */
+  transition: color 0.2s ease;
 }
 
-/* Ensure input styles target inputs inside .form-wrapper */
 .form-wrapper .form-group input[type="text"],
 .form-wrapper .form-group input[type="email"],
 .form-wrapper .form-group textarea {
   display: block;
   width: 100%;
   padding: 12px;
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--input-border);      /* Use variable */
   border-radius: 5px;
-  background-color: var(--input-background);
-  color: whitesmoke; /* Keep whitesmoke for input text */
+  background-color: var(--input-background); /* Use variable */
+  /* Use text-color for input, it should contrast with input-background */
+  color: var(--text-color);
   font-size: 1rem;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
-/* --- Centered Form Wrapper --- */
-.form-wrapper {
-  max-width: 700px;
-  margin: 0 auto 4rem auto;
-  padding: 2rem;
-  background-color: var(--card-background); /* Use variable */
-  border-radius: 8px;
-  transition: background-color 0.3s ease; /* Add transition */
-  /* Add border/shadow if desired, using variables */
-  border: 1px solid var(--card-border);
-  /* box-shadow: ... */
+/* Recaptcha container - ensure it adapts */
+.recaptcha-container {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  /* Recaptcha theme is set in JS, but you might need wrapper styles */
 }
 
-/* Style the Calendly link like a button (optional) */
-.calendly-link-button {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: var(--primary-color); /* Use your theme color */
-  color: #fff;
-  text-decoration: none;
+/* Submit Button */
+.form-wrapper form button[type="submit"] {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 1.5rem auto 0 auto;
+  /* Increase padding here */
+  padding: 18px 35px;
+  background-color: var(--primary-color); /* Use variable */
+  color: #ffffff; /* White text usually works on primary buttons */
+  border: none;
   border-radius: 5px;
+  font-size: 1.1rem;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.form-wrapper form button[type="submit"]:hover {
+  background-color: var(--secondary-color); /* Use variable */
 }
 
-.calendly-link-button:hover {
-  background-color: var(--secondary-color); /* Use a hover color */
-}
-
-/* --- Layout for Details and Calendly (Below Form) --- */
+/* --- Details Layout --- */
 .contact-details-layout {
   display: grid;
   grid-template-columns: 1fr;
@@ -110,60 +95,53 @@
   margin-top: 4rem;
   padding-top: 2rem;
   border-top: 1px solid var(--card-border); /* Use variable */
-  transition: border-color 0.3s ease;
+  transition: border-color 0.2s ease;
 }
 
-/* --- Styling for Columns within contact-details-layout --- */
-.contact-details-column,
-.calendly-details-column {
-  padding: 1rem;
-  text-align: center;
-}
-
-/* Ensure column headings use text color */
 .contact-details-column h3,
 .calendly-details-column h3 {
   margin-bottom: 1rem;
-  color: var(--text-color); /* Explicitly set */
-  transition: color 0.3s ease;
+  color: var(--text-color); /* Use variable */
+  transition: color 0.2s ease;
 }
 
-/* Ensure column paragraphs use text color */
 .contact-details-column p,
 .calendly-details-column p {
   margin-bottom: 0.75rem;
   line-height: 1.6;
-  color: var(--text-color); /* Explicitly set */
-  transition: color 0.3s ease;
+  color: var(--text-color); /* Use variable */
+  transition: color 0.2s ease;
 }
 
-/* Ensure column links use link color */
 .contact-details-column a {
   color: var(--link-color); /* Use variable */
   text-decoration: none;
   transition: color 0.2s ease;
 }
-
 .contact-details-column a:hover {
   color: var(--link-hover-color); /* Use variable */
   text-decoration: underline;
 }
 
-/* Responsive adjustments might be needed */
-@media (max-width: 768px) {
-  .contact-layout {
-    flex-direction: column; /* Stack columns on smaller screens */
-  }
-  .contact-form-column,
-  .calendly-column {
-    flex-basis: 100%; /* Make columns full width when stacked */
-  }
+/* Calendly Button */
+.calendly-link-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--primary-color); /* Use variable */
+  color: #ffffff; /* White text */
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+.calendly-link-button:hover {
+  background-color: var(--secondary-color); /* Use variable */
 }
 
-/* --- Responsive: Side-by-side columns for details/calendly --- */
+/* --- Responsive --- */
 @media (min-width: 768px) {
   .contact-details-layout {
-    grid-template-columns: 1fr 1fr; /* Ensure this is active */
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
   }
 
@@ -175,24 +153,4 @@
   .calendly-details-column p:has(> .calendly-link-button) {
       text-align: left;
   }
-}
-
-/* Submit Button */
-.form-wrapper form button[type="submit"] {
-  display: block;
-  width: 100%;
-  max-width: 300px;
-  margin: 1.5rem auto 0 auto;
-  /* Increase padding here */
-  padding: 18px 35px; /* Example: Increased padding */
-  background-color: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
