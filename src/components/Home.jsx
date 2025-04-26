@@ -4,7 +4,7 @@ import profilePic from '../assets/ProfilePic1.jpeg'; // Path relative to the com
 
 const Home = () => {
     return (
-        <section className="about-section" id="about"> {/* Added id for potential navigation */}
+        <section className="home-section" id="about"> {/* Added id for potential navigation */}
             <div className="container">
                 <img src={profilePic} alt="Profile Picture" className="profile-pic" />
                 <h2>Profile</h2>

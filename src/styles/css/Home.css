@@ -2,53 +2,66 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: calc(80vh - 60px); /* Adjust height based on header/footer */
-  padding: 2rem;
+  /* Remove justify-content: center if you want content aligned top/center */
+  padding: 40px 20px; /* Consistent padding */
   text-align: center;
   background-color: var(--background-color); /* Use variable */
   transition: background-color 0.2s ease;
+  min-height: 60vh; /* Adjust as needed */
 }
 
-.home-section h1 {
-  font-size: 2.5rem; /* Adjust size */
-  margin-bottom: 0.5rem;
+/* Style for the container within home-section if needed */
+.home-section .container {
+    max-width: 800px; /* Example max-width */
+    width: 100%;
+}
+
+/* Style the profile picture */
+.home-section .profile-pic {
+  width: 150px; /* Adjust size */
+  height: 150px;
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure image covers the area */
+  margin-bottom: 1.5rem;
+  border: 3px solid var(--card-border); /* Optional border using variable */
+  transition: border-color 0.2s ease;
+}
+
+/* Target h2 instead of h1 */
+.home-section h2 {
+  font-size: 2rem; /* Adjust size */
+  margin-bottom: 1rem;
   color: var(--text-color); /* Use variable */
   transition: color 0.2s ease;
 }
 
-.home-section .subtitle {
-  font-size: 1.2rem; /* Adjust size */
-  margin-bottom: 1.5rem;
+/* Style paragraphs directly, remove .subtitle rule */
+.home-section p {
+  font-size: 1.1rem; /* Adjust size */
+  line-height: 1.7; /* Improve readability */
+  margin-bottom: 1rem;
   color: var(--text-color); /* Use variable */
-  opacity: 0.8; /* Slightly less prominent */
+  opacity: 0.9; /* Slightly less prominent */
   transition: color 0.2s ease, opacity 0.2s ease;
+  max-width: 700px; /* Limit text width for readability */
+  margin-left: auto;
+  margin-right: auto;
 }
+/* Remove the old .subtitle rule if it exists */
+/* .home-section .subtitle { ... } */
 
-.home-section .cta-button {
-  padding: 12px 25px;
-  background-color: var(--primary-color); /* Use variable */
-  color: #ffffff; /* White text */
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.home-section .cta-button:hover {
-  background-color: var(--secondary-color); /* Use variable */
-  transform: translateY(-2px); /* Slight lift effect */
-}
+/* Remove CTA button styles if not used in Home.jsx */
+/*
+.home-section .cta-button { ... }
+.home-section .cta-button:hover { ... }
+*/
 
 /* Responsive adjustments */
 @media (min-width: 768px) {
-  .home-section h1 {
-    font-size: 3.5rem;
+  .home-section h2 {
+    font-size: 2.5rem;
   }
-  .home-section .subtitle {
-    font-size: 1.5rem;
+  .home-section p {
+    font-size: 1.2rem;
   }
 }

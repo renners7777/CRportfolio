@@ -1,218 +1,198 @@
-/* filepath: src/components/Header.css */
+/* --- Main Header Container --- */
 .header {
-  background-color: var(--header-background); /* Use variable */
-  color: var(--header-text-color); /* Use variable */
-  padding: 1rem 2rem; /* Adjust padding */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky; /* Make header sticky */
+  background-color: var(--header-background);
+  color: var(--header-text-color);
+  position: sticky;
   top: 0;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+/* --- Top Row (Logo/Title) --- */
+.header-top-row {
+  padding: 0.5rem 2rem; /* Adjust padding */
   color: var(--header-text-color); /* Use variable */
-  text-decoration: none; /* Ensure logo link isn't underlined by default */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional separator */
+}
+.header-top-row .logo { /* Target logo within top row */
+  font-size: 1.2rem; /* Example size */
+  font-weight: bold;
 }
 
-.header nav ul {
+/* --- Bottom Row --- */
+.header-bottom-row {
+  padding: 0.5rem 2rem; /* Adjust padding */
+}
+
+/* Container within Bottom Row for Alignment */
+.header-bottom-row .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* Match global container width if needed */
+  margin: 0 auto; /* Center container */
+  gap: 20px; /* Use gap for spacing */
+}
+
+/* --- Navigation (within Bottom Row Container) --- */
+.header-container nav { /* Target nav within container */
+  order: 1; /* Default order on desktop */
+  flex-grow: 1; /* Allow nav to take available space if needed */
+}
+.header-container nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  gap: 1.5rem; /* Space between nav items */
+  display: flex; /* Default to flex for desktop */
+  gap: 1.5rem;
+  align-items: center; /* Align items vertically */
 }
-
-.header nav a {
-  color: var(--header-text-color); /* Use variable */
+.header-container nav a {
   text-decoration: none;
-  padding: 0.5rem 0; /* Add padding for easier clicking */
-  position: relative; /* For potential underline effect */
+  color: var(--header-text-color); /* Use variable */
+  font-weight: 500; /* Adjust weight */
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
   opacity: 0.9;
-  transition: opacity 0.2s ease, color 0.2s ease;
 }
-
-.header nav a:hover,
-.header nav a.active { /* Style for active link */
+.header-container nav a:hover,
+.header-container nav a:focus,
+.header-container nav a.active { /* Combined hover/focus/active */
+  color: var(--primary-color); /* Use variable for highlight */
+  /* background-color: rgba(255, 255, 255, 0.1); /* Optional subtle background */
   opacity: 1;
-  color: var(--primary-color); /* Highlight active/hover link */
-  /* Optional: Underline effect
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    gap: 20px; /* Use gap for spacing */
+}
+.header-container nav a:focus-visible {
+  outline: 2px dashed var(--primary-color); /* Use variable */
+  outline-offset: 2px;
 }
 
-/* Adjustments to elements within the bottom row */
-
-.header-bottom-row .main-navigation ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 1.5rem;
+/* --- Social Icons (within Bottom Row Container) --- */
+.header-container .social-icons-header { /* Target within container */
+  display: flex; /* Default to flex for desktop */
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0; /* Prevent shrinking */
+  order: 2; /* Default order on desktop */
 }
-.header-bottom-row .main-navigation a {
-    /* Keep existing link styles */
-    text-decoration: none;
-    color: #adb5bd;
-    font-weight: bold;
-    padding: 0.5rem;
-    border-radius: 4px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+.header-container .social-icons-header a {
+  color: var(--header-text-color); /* Use variable */
+  font-size: 1.25rem; /* Adjust size */
+  display: inline-block; /* Ensure proper rendering */
+  transition: color 0.3s ease, transform 0.2s ease;
 }
-.header-bottom-row .main-navigation a:hover,
-.header-bottom-row .main-navigation a:focus,
-.header-bottom-row .main-navigation a.active {
-  color: #ffffff;
-  background-color: #495057;
-}
-.header-bottom-row .main-navigation a:focus-visible {
-    outline: 2px dashed #ffffff;
-    outline-offset: 2px;
+.header-container .social-icons-header a:hover {
+  color: var(--primary-color); /* Use variable */
+  transform: scale(1.1); /* Slight scale effect */
 }
 
-
-.header-bottom-row .social-icons-header { /* Specificity */
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-shrink: 0; /* Prevent shrinking */
-    /* No margin needed, justify-content handles spacing */
+/* --- Mobile Navigation Toggle (within Bottom Row Container) --- */
+.header-container .menu-toggle { /* Target within container */
+  display: none; /* Hidden on desktop by default */
+  order: 3; /* Last item on desktop (though hidden) */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001; /* Above nav when open */
+  flex-shrink: 0; /* Prevent shrinking */
 }
-.header-bottom-row .social-icons-header a {
-    color: #ffffff; /* White icons on dark background */
-    font-size: 20px;
-    display: inline-block;
-    transition: color 0.3s ease;
+.header-container .menu-toggle .hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--header-text-color); /* Use variable */
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.header-bottom-row .social-icons-header a:hover {
-    color: #00bfff; /* Lighter blue hover */
+/* Hamburger Animation */
+.header-container .menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
 }
-
-
-.header-bottom-row .mobile-nav-toggle { /* Specificity */
-    display: none; /* Hidden on desktop */
-    order: 2; /* Now it's the second item after nav */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
+.header-container .menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
 }
-.header-bottom-row .mobile-nav-toggle .hamburger-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #ffffff;
-    margin: 5px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.header-container .menu-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
-/* Keep hamburger animation styles if you have them */
-.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-
 
 /* --- Mobile Styles --- */
-@media (max-width: 767px) { /* Adjust breakpoint */
+@media (max-width: 767px) { /* Adjust breakpoint if needed */
 
-    .header-top-row {
-        font-size: 1.1rem; /* Adjust mobile top row size */
-        padding: 0.6rem 1rem;
-    }
+  .header-top-row {
+    font-size: 1rem; /* Adjust mobile top row size */
+    padding: 0.6rem 1rem;
+    text-align: center; /* Center on mobile */
+  }
 
-    .header-bottom-row {
-        padding: 0.5rem 1rem;
-    }
+  .header-bottom-row {
+    padding: 0.5rem 1rem;
+  }
 
-    .header-bottom-row .header-container {
-        gap: 10px;
-        /* Keep justify-content: space-between; */
-    }
+  .header-bottom-row .header-container {
+    gap: 10px;
+  }
 
-    .header-bottom-row .main-navigation {
-        /* Mobile menu styles */
-        position: absolute;
-        top: 100%; /* Below the entire header */
-        left: 0;
-        right: 0;
-        background-color: #343a40;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        padding: 1rem 0;
-        z-index: 1000;
-        display: none;
-        order: 1; /* Nav comes first visually when open */
-    }
-    .header-bottom-row .main-navigation.is-open {
-        display: block;
-    }
-    .header-bottom-row .main-navigation ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    .header-bottom-row .main-navigation a {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 1rem;
-    }
-
-    .header-bottom-row .social-icons-header {
-        display: none; /* Keep hidden */
-    }
-
-    .header-bottom-row .mobile-nav-toggle {
-        display: block; /* Show toggle */
-        flex-shrink: 0; /* Prevent shrinking */
-        order: 2; /* Ensure toggle is after nav placeholder */
-    }
-}
-
-/* --- Desktop Styles (min-width) --- */
-@media (min-width: 768px) { /* Adjust breakpoint */
-
-    .header-bottom-row .main-navigation {
-        display: flex !important; /* Use flex for alignment */
-        align-items: center;
-        position: static;
-        background: none;
-        box-shadow: none;
-        padding: 0;
-        order: 1; /* Nav first */
-    }
-    .header-bottom-row .main-navigation ul {
-        flex-direction: row;
-        gap: 1.5rem;
-        align-items: center; /* Align items vertically */
-    }
-    .header-bottom-row .main-navigation a {
-        display: inline-block;
-        width: auto;
-        padding: 0.5rem;
-    }
-
-    .header-bottom-row .social-icons-header {
+  .header-container nav {
+    /* Mobile menu container styles */
+    position: absolute;
+    top: 100%; /* Position below the entire header */
+    left: 0;
+    right: 0;
+    background-color: var(--header-background); /* Use variable */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    z-index: 1000;
+    order: 1; /* Ensure it's visually first when open */
+    /* Hide nav itself, show ul when active */
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+  .header-container nav ul {
+    display: none; /* Hide ul by default */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    gap: 0.5rem;
+  }
+  /* Show nav container and ul when ul has 'active' class */
+  .header-container nav ul.active {
+    display: flex; /* Show ul */
+  }
+  .header-container nav ul.active + .social-icons-header {
+     /* If you want social icons below nav on mobile, style here */
         display: flex; /* Show social icons */
-        order: 2; /* Icons second */
-    }
+  }
+  /* Make nav container visible when ul is active */
+  .header-container nav:has(ul.active) {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
+  }
 
-    .header-bottom-row .mobile-nav-toggle {
-        display: none; /* Hide toggle */
-    }
+  .header-container nav a {
+    display: block; /* Make links take full width */
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    color: var(--header-text-color); /* Ensure color */
+  }
+  .header-container nav a:hover,
+  .header-container nav a:focus,
+  .header-container nav a.active {
+     background-color: rgba(0,0,0, 0.2); /* Darker background for selection */
+     color: var(--primary-color); /* Highlight color */
+  }
+
+  .header-container .social-icons-header {
+    display: none; /* Hide social icons on mobile nav by default */
+  }
+
+  .header-container .menu-toggle {
+    display: block; /* Show toggle button */
+    order: 2; /* Place toggle after nav placeholder */
+  }
 }
 
