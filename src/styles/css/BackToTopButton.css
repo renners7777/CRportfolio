@@ -2,33 +2,31 @@
   position: fixed;
   bottom: 30px;
   right: 30px;
-  z-index: 1000;
+
+  z-index: 1000; /* Ensure it's above other content */
 }
 
 .back-to-top button {
-  background-color: var(--primary-color); /* Use variable */
-  color: #fff; /* White icon */
+  background-color: var(--primary-color);
+  color: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 50%; /* Make it circular */
   width: 50px;
   height: 50px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Consider theme-aware shadow */
+  font-size: 1.5rem; /* Adjust icon size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
-  opacity: 0.8;
+  opacity: 0.8; /* Slightly transparent */
 }
 
 .back-to-top button:hover {
-  background-color: var(--secondary-color); /* Use variable */
+  background-color: var(--secondary-color);
   opacity: 1;
   transform: scale(1.1);
 }
 
+/* Add focus styles for accessibility */
 .back-to-top button:focus-visible {
-   outline: 3px dashed var(--secondary-color); /* Use variable */
+   outline: 3px dashed var(--secondary-color);
    outline-offset: 3px;
 }
