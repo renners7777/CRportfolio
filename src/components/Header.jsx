@@ -1,4 +1,3 @@
-// filepath: /home/chris/Documents/CRportfolio/src/components/Header.jsx
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
@@ -23,10 +22,13 @@ const Header = () => {
     };
 
     return (
-        <header className="site-header">
+        <header className="header">
             {/* Top Row */}
             <div className="header-top-row">
-                Chris Renshaw, Freelance Software Engineer
+                {/* Step 4: Wrap text in a div with class "logo" */}
+                <div className="logo">
+                    Chris Renshaw, Freelance Software Engineer
+                </div>
             </div>
 
             {/* Bottom Row - Contains the previous layout */}
@@ -35,8 +37,10 @@ const Header = () => {
                     {/* Site Title Removed From Here */}
 
                     {/* Navigation */}
-                    <nav className={`main-navigation ${isMobileMenuOpen ? 'is-open' : ''}`}>
-                        <ul>
+                    {/* Step 3: Remove conditional class from nav */}
+                    <nav>
+                        {/* Step 3: Add conditional 'active' class to ul */}
+                        <ul className={isMobileMenuOpen ? 'active' : ''}>
                             <li><NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
                             <li><NavLink to="/services" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
                             <li><NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
@@ -51,10 +55,10 @@ const Header = () => {
                         <a href={peerlistUrl} target="_blank" rel="noopener noreferrer" aria-label="Peerlist Profile"><SiPeerlist /></a>
                     </div>
 
-                    {/* Mobile Nav Toggle */}
+                    {/* Mobile Nav Toggle - Ensure class is "menu-toggle" (already correct) */}
                     <button
                         type="button"
-                        className="mobile-nav-toggle"
+                        className="menu-toggle"
                         aria-label="Toggle navigation"
                         aria-expanded={isMobileMenuOpen}
                         onClick={toggleMobileMenu}
