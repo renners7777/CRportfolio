@@ -24,12 +24,12 @@
 
 /* Scope the item styling */
 .portfolio-section .portfolio-item {
-  background-color: #ffffff; /* Might need adjustment for dark theme */
-  border: 1px solid #e0e0e0; /* Might need adjustment for dark theme */
+  background-color: var(--card-background); /* Use variable */
+  border: 1px solid var(--card-border);    /* Use variable */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Consider adjusting shadow for themes */
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; /* Added transitions */
   display: flex;
   flex-direction: column;
 }
@@ -45,20 +45,23 @@
   height: 200px;
   object-fit: cover;
   display: block;
-  background-color: #f0f0f0; /* Placeholder color */
+  /* background-color: #f0f0f0; /* Remove placeholder or use a variable */
 }
 
 /* Scope title styling */
 .portfolio-section .portfolio-title {
   font-size: 1.25rem;
-  color: #333; /* Might need adjustment for dark theme */
+  color: var(--text-color); /* Use variable */
+  font-weight: 600; /* Optional: Increase font weight slightly */
   margin: 1rem 1rem 0.5rem 1rem;
 }
 
 /* Scope description styling */
 .portfolio-section .portfolio-description {
   font-size: 0.95rem;
-  color: #555; /* Might need adjustment for dark theme */
+  /* color: #555; /* Replace with a variable or inherit */
+  color: var(--text-color); /* Or define a --text-secondary variable */
+  opacity: 0.9; /* Optional: Slightly reduce opacity for secondary text */
   line-height: 1.6;
   margin: 0 1rem 1rem 1rem;
   flex-grow: 1;
@@ -67,8 +70,8 @@
 /* Scope link styling */
 .portfolio-section .portfolio-link {
   display: inline-block;
-  background-color: #007bff; /* Consider using CSS variables like var(--primary-color) */
-  color: #ffffff;
+  background-color: var(--primary-color); /* Use variable */
+  color: #ffffff; /* Usually keep white for primary buttons */
   text-align: center;
   padding: 0.75rem 1rem;
   margin: 0 1rem 1rem 1rem;
@@ -81,14 +84,14 @@
 
 .portfolio-section .portfolio-link:hover,
 .portfolio-section .portfolio-link:focus {
-  background-color: #0056b3; /* Consider using var(--secondary-color) */
+  background-color: var(--secondary-color); /* Use variable */
   color: #ffffff;
   text-decoration: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 .portfolio-section .portfolio-link:focus-visible {
-    outline: 2px dashed #0056b3;
+    outline: 2px dashed var(--secondary-color); /* Use variable */
 }
 
 
