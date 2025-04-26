@@ -1,7 +1,26 @@
 /* --- Main Section Styling --- */
 .contact-section {
   padding-top: 40px;
-  padding-bottom: 80px; /* Increased bottom padding */
+  padding-bottom: 80px;
+}
+
+/* Ensure main heading uses text color */
+.contact-section > h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--text-color); /* Explicitly set */
+  transition: color 0.3s ease;
+}
+
+/* Ensure intro paragraph uses text color */
+.contact-section .contact-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color); /* Explicitly set */
+  transition: color 0.3s ease;
 }
 
 /* Submit status styles - Apply theme variables */
@@ -30,18 +49,18 @@
 }
 
 /* Fix form group layout - Ensure this targets labels inside .form-wrapper */
-.form-wrapper .form-group label { /* Changed selector */
+.form-wrapper .form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: var(--text-color); /* Explicitly set color using variable */
-  transition: color 0.3s ease; /* Add transition */
+  color: var(--text-color); /* Already set */
+  transition: color 0.3s ease;
 }
 
 /* Ensure input styles target inputs inside .form-wrapper */
-.form-wrapper .form-group input[type="text"], /* Changed selector */
-.form-wrapper .form-group input[type="email"], /* Changed selector */
-.form-wrapper .form-group textarea { /* Changed selector */
+.form-wrapper .form-group input[type="text"],
+.form-wrapper .form-group input[type="email"],
+.form-wrapper .form-group textarea {
   display: block;
   width: 100%;
   padding: 12px;
@@ -86,32 +105,47 @@
 /* --- Layout for Details and Calendly (Below Form) --- */
 .contact-details-layout {
   display: grid;
-  grid-template-columns: 1fr; /* Default: single column */
+  grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 4rem; /* Increased top margin for more space below form */
+  margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #444;
+  border-top: 1px solid var(--card-border); /* Use variable */
+  transition: border-color 0.3s ease;
 }
 
-/* Style for contact details below form */
-.contact-details {
-  text-align: left; /* Align text left, or keep center if preferred */
+/* --- Styling for Columns within contact-details-layout --- */
+.contact-details-column,
+.calendly-details-column {
+  padding: 1rem;
+  text-align: center;
 }
 
-.contact-details h3 {
-  margin-bottom: 15px;
+/* Ensure column headings use text color */
+.contact-details-column h3,
+.calendly-details-column h3 {
+  margin-bottom: 1rem;
+  color: var(--text-color); /* Explicitly set */
+  transition: color 0.3s ease;
 }
 
-.contact-details p {
-  margin-bottom: 10px;
+/* Ensure column paragraphs use text color */
+.contact-details-column p,
+.calendly-details-column p {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  color: var(--text-color); /* Explicitly set */
+  transition: color 0.3s ease;
 }
 
-.contact-details a {
-  color: var(--primary-color); /* Use theme link color */
+/* Ensure column links use link color */
+.contact-details-column a {
+  color: var(--link-color); /* Use variable */
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.contact-details a:hover {
+.contact-details-column a:hover {
+  color: var(--link-hover-color); /* Use variable */
   text-decoration: underline;
 }
 
@@ -127,8 +161,7 @@
 }
 
 /* --- Responsive: Side-by-side columns for details/calendly --- */
-/* @media (min-width: 768px) { */ /* Keep this breakpoint or adjust if needed */
-@media (min-width: 768px) { /* Example: Keeping 768px */
+@media (min-width: 768px) {
   .contact-details-layout {
     grid-template-columns: 1fr 1fr; /* Ensure this is active */
     gap: 3rem;
