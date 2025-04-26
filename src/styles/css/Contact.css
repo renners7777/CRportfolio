@@ -103,14 +103,16 @@
 .contact-section .form-group input[type="text"],
 .contact-section .form-group input[type="email"],
 .contact-section .form-group textarea {
-  display: block; /* Ensure input/textarea takes its own line */
-  width: 100%; /* Make input/textarea fill the column width */
-  padding: 10px;
-  border: 1px solid #555;
-  background-color: #333;
-  color: #fff;
-  border-radius: 4px;
-  box-sizing: border-box; /* Important for width calculation */
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--input-border); /* Use variable */
+  border-radius: 5px;
+  background-color: var(--input-background); /* Use variable */
+  color: var(--text-color); /* This might be the issue in Edge */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Added transitions */
 }
 
 /* --- Centered Form Wrapper --- */
