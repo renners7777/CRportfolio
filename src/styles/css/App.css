@@ -1,54 +1,77 @@
+/* --- CSS Variable Definitions --- */
+:root {
+  /* Default (Light Mode) */
+  --background-color: #ffffff;        /* Light background */
+  --text-color: #212529;            /* Dark text */
+  --primary-color: #007bff;         /* Primary action color */
+  --secondary-color: #0056b3;       /* Primary hover */
+  --card-background: #f8f9fa;        /* Slightly off-white card */
+  --card-border: #dee2e6;          /* Light border */
+  --input-background: #ffffff;       /* White input */
+  --input-border: #ced4da;          /* Standard input border */
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--secondary-color);
+  /* Add any other specific light-mode colors */
+  --header-background: #343a40;       /* Example dark header */
+  --header-text-color: #ffffff;      /* Example light header text */
+  --footer-background: #343a40;       /* Example dark footer */
+  --footer-text-color: #ffffff;      /* Example light footer text */
+  --skill-background: #e9ecef;        /* Light skill tag */
+  --skill-text-color: #495057;       /* Darker skill text */
+}
+
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #121212;        /* Very dark background */
+    --text-color: #e0e0e0;            /* Light text */
+    --primary-color: #4dabf7;         /* Lighter blue */
+    --secondary-color: #1e88e5;       /* Darker blue hover */
+    --card-background: #1e1e1e;        /* Dark card */
+    --card-border: #444444;          /* Dark border */
+    --input-background: #2c2c2c;       /* Dark input */
+    --input-border: #555555;          /* Dark input border */
+    --link-color: var(--primary-color);
+    --link-hover-color: #8ccfff;      /* Lighter hover */
+    /* Add any other specific dark-mode colors */
+    --header-background: #1c1c1c;       /* Even darker header */
+    --header-text-color: #e0e0e0;
+    --footer-background: #1c1c1c;       /* Even darker footer */
+    --footer-text-color: #e0e0e0;
+    --skill-background: #3a3a3a;        /* Dark skill tag */
+    --skill-text-color: #e0e0e0;       /* Light skill text */
+  }
+}
+/* --- End Variable Definitions --- */
+
+/* --- Base Styles --- */
 body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+    margin: 0; /* Reset margin if needed */
+    color: var(--text-color); /* Ensure headings use text color */
+}
+
+p {
+   color: var(--text-color); /* Ensure paragraphs use text color */
+   line-height: 1.6; /* Example line height */
 }
 
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--link-color);
+    transition: color 0.2s ease;
+}
+a:hover {
+    color: var(--link-hover-color);
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.header {
-    background-color: #282c34;
-    padding: 20px;
-    color: white;
-    text-align: center;
-}
-
-.footer {
-    background-color: #282c34;
-    padding: 10px;
-    color: white;
-    text-align: center;
-}
-
-.portfolio-item {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin: 10px 0;
-}
-
-.skills {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.skill {
-    background-color: #f0f0f0;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-}
+/* ... other general styles in App.css using variables ... */

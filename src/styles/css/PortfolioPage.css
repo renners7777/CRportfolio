@@ -1,42 +1,35 @@
 /* --- SCOPED PORTFOLIO SECTION STYLES --- */
 
-/* Remove or comment out .portfolio-page styles as they are too general */
-/*
-.portfolio-page {
-  padding: 2rem 0;
-}
-*/
-
 /* Scope the h2 style */
 .portfolio-section h2 {
-  /* text-align: center; /* Centering is handled inline in HomePage.jsx */
-  font-size: 2rem; /* Keep or adjust as needed */
-  /* color: #333; /* This might conflict with dark theme, consider removing or using a variable */
-  margin-bottom: 2rem; /* Keep or adjust as needed */
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-color); /* Use variable */
+  transition: color 0.2s ease;
 }
 
 /* Scope the grid layout */
 .portfolio-section .portfolio-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Start with 1 column */
+  grid-template-columns: 1fr;
   gap: 1.5rem;
 }
 
 /* Scope the item styling */
 .portfolio-section .portfolio-item {
-  background-color: #ffffff; /* Might need adjustment for dark theme */
-  border: 1px solid #e0e0e0; /* Might need adjustment for dark theme */
+  background-color: var(--card-background); /* Use variable */
+  border: 1px solid var(--card-border);    /* Use variable */
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Optional: Consider theme-aware shadow */
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.2s ease, border-color 0.2s ease;
   display: flex;
   flex-direction: column;
 }
 
 .portfolio-section .portfolio-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional: Consider theme-aware shadow */
 }
 
 /* Scope image styling */
@@ -45,30 +38,34 @@
   height: 200px;
   object-fit: cover;
   display: block;
-  background-color: #f0f0f0; /* Placeholder color */
+  /* background-color: #f0f0f0; /* Remove placeholder */
 }
 
 /* Scope title styling */
 .portfolio-section .portfolio-title {
   font-size: 1.25rem;
-  color: #333; /* Might need adjustment for dark theme */
+  color: var(--text-color); /* Use variable */
+  font-weight: 600;
   margin: 1rem 1rem 0.5rem 1rem;
+  transition: color 0.2s ease;
 }
 
 /* Scope description styling */
 .portfolio-section .portfolio-description {
   font-size: 0.95rem;
-  color: #555; /* Might need adjustment for dark theme */
+  color: var(--text-color); /* Use variable */
+  opacity: 0.9; /* Optional */
   line-height: 1.6;
   margin: 0 1rem 1rem 1rem;
   flex-grow: 1;
+  transition: color 0.2s ease;
 }
 
 /* Scope link styling */
 .portfolio-section .portfolio-link {
   display: inline-block;
-  background-color: #007bff; /* Consider using CSS variables like var(--primary-color) */
-  color: #ffffff;
+  background-color: var(--primary-color); /* Use variable */
+  color: #ffffff; /* White text */
   text-align: center;
   padding: 0.75rem 1rem;
   margin: 0 1rem 1rem 1rem;
@@ -81,14 +78,31 @@
 
 .portfolio-section .portfolio-link:hover,
 .portfolio-section .portfolio-link:focus {
-  background-color: #0056b3; /* Consider using var(--secondary-color) */
+  background-color: var(--secondary-color); /* Use variable */
   color: #ffffff;
   text-decoration: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 .portfolio-section .portfolio-link:focus-visible {
-    outline: 2px dashed #0056b3;
+    outline: 2px dashed var(--secondary-color); /* Use variable */
+}
+
+/* Style for the show more button */
+.show-more-button {
+  padding: 12px 25px;
+  background-color: var(--primary-color); /* Use variable */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+  background-color: var(--secondary-color); /* Use variable */
 }
 
 /* Example style for the show more button */
@@ -112,11 +126,9 @@
 /* --- SCOPED Responsive Adjustments --- */
 
 @media (min-width: 768px) {
-  /* Scope h2 adjustments */
   .portfolio-section h2 {
     font-size: 2.5rem;
   }
-  /* Scope grid adjustments */
   .portfolio-section .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
@@ -124,7 +136,6 @@
 }
 
 @media (min-width: 1024px) {
-  /* Scope grid adjustments */
   .portfolio-section .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
   }
