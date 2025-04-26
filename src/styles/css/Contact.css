@@ -109,10 +109,11 @@
   border: 1px solid var(--input-border); /* Use variable */
   border-radius: 5px;
   background-color: var(--input-background); /* Use variable */
-  color: var(--text-color); /* This might be the issue in Edge */
+  /* Explicitly set color for better cross-browser consistency, especially in dark mode */
+  color: whitesmoke; /* Changed from var(--text-color) */
   font-size: 1rem;
   box-sizing: border-box;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Added transitions */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* --- Centered Form Wrapper --- */
