@@ -1,22 +1,26 @@
 /* filepath: src/components/Header.css */
 .header {
-  background-color: var(--header-background); /* Use variable */
-  color: var(--header-text-color); /* Use variable */
-  padding: 1rem 2rem; /* Adjust padding */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky; /* Make header sticky */
-  top: 0;
-  z-index: 1000; /* Ensure it's above other content */
-  transition: background-color 0.2s ease, color 0.2s ease;
+  background-color: #343a40; /* Dark background */
+  padding: 1rem 0;
+  border-bottom: 3px solid #007bff; /* Accent border */
 }
 
-.header .logo {
+.header .container { /* Target container within header */
+   display: flex;
+   justify-content: space-between; /* Space out logo/nav */
+   align-items: center;
+   padding-top: 0; /* Remove container padding if header has its own */
+   padding-bottom: 0;
+}
+
+.header h1 {
+  margin: 0; /* Remove default heading margin */
   font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--header-text-color); /* Use variable */
-  text-decoration: none; /* Ensure logo link isn't underlined by default */
+}
+
+.header h1 a {
+  color: #ffffff; /* White text */
+  text-decoration: none;
 }
 
 .header nav ul {
@@ -24,66 +28,268 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 1.5rem; /* Space between nav items */
+  gap: 1rem; /* Space between nav items */
 }
 
 .header nav a {
-  color: var(--header-text-color); /* Use variable */
-  text-decoration: none;
-  padding: 0.5rem 0; /* Add padding for easier clicking */
-  position: relative; /* For potential underline effect */
-  opacity: 0.9;
-  transition: opacity 0.2s ease, color 0.2s ease;
+  color: #adb5bd; /* Lighter gray for nav links */
+  font-weight: bold;
+  padding: 0.5rem; /* Add padding for easier clicking */
+  border-radius: 4px; /* Slightly rounded corners */
 }
 
 .header nav a:hover,
+.header nav a:focus,
 .header nav a.active { /* Style for active link */
-  opacity: 1;
-  color: var(--primary-color); /* Highlight active/hover link */
-  /* Optional: Underline effect
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  color: #ffffff;
+  background-color: #495057; /* Darker background on hover/focus */
+  text-decoration: none;
+}
+ /* Improve focus visibility */
+.header nav a:focus-visible {
+    outline: 2px dashed #ffffff;
+    outline-offset: 2px;
+}
+
+
+/* Mobile Nav (Example - requires JS for toggle) */
+.nav-toggle {
+    display: none; /* Hide toggle on larger screens */
+    /* Add styles for button appearance */
+}
+
+@media (max-width: 767px) {
+    .header .container {
+        flex-direction: column; /* Stack logo and nav */
+        align-items: flex-start;
+    }
+
+    .header nav {
+       width: 100%;
+       /* Add styles to hide/show nav, e.g., display: none; */
+       /* You'll need JavaScript to toggle visibility */
+       margin-top: 0.5rem;
+    }
+
+    .header nav ul {
+        flex-direction: column; /* Stack nav items */
+        width: 100%;
+        gap: 0.5rem;
+    }
+     .header nav a {
+        display: block; /* Make links take full width */
+        text-align: center;
+     }
+
+    .nav-toggle {
+        display: block; /* Show toggle on small screens */
+        position: absolute; /* Position relative to header */
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+/* --- Site Header (Main Container) --- */
+.site-header {
+    /* Remove direct flex properties if any */
+    padding: 0; /* Apply padding to rows instead */
+    background-color: #343a40;
+    border-bottom: 3px solid #007bff;
+    position: relative; /* Keep for mobile menu positioning */
+}
+
+/* --- Top Row --- */
+.header-top-row {
+    text-align: center;
+    padding: 0.85rem 1rem; /* Slightly more padding */
+    color: #ffffff;
+    font-size: 1.4rem; /* Increased font size */
+    font-weight: bold;
+    border-bottom: 1px solid #495057; /* Optional separator */
+}
+
+/* --- Bottom Row --- */
+.header-bottom-row {
+    padding: 0.5rem 1rem; /* Padding for the content inside */
+}
+
+/* Container within Bottom Row (Existing Flex Layout) */
+.header-bottom-row .header-container { /* Specificity */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between nav and icons */
     width: 100%;
-    height: 2px;
-    background-color: var(--primary-color);
-  }
-  */
+    gap: 20px; /* Use gap for spacing */
 }
 
-/* Styles for mobile menu toggle (if you add one later) */
-.menu-toggle {
-  display: none; /* Hide by default */
-  /* ... styles for button ... */
-  background: none;
-  border: none;
-  color: var(--header-text-color);
-  font-size: 1.5rem;
-  cursor: pointer;
+/* Adjustments to elements within the bottom row */
+
+.header-bottom-row .main-navigation { /* Specificity */
+    /* No specific flex properties needed, let justify-content handle it */
+}
+.header-bottom-row .main-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem;
+}
+.header-bottom-row .main-navigation a {
+    /* Keep existing link styles */
+    text-decoration: none;
+    color: #adb5bd;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.header-bottom-row .main-navigation a:hover,
+.header-bottom-row .main-navigation a:focus,
+.header-bottom-row .main-navigation a.active {
+  color: #ffffff;
+  background-color: #495057;
+}
+.header-bottom-row .main-navigation a:focus-visible {
+    outline: 2px dashed #ffffff;
+    outline-offset: 2px;
 }
 
-/* Responsive adjustments for header */
-@media (max-width: 768px) {
-  .header nav ul {
-    /* Styles to hide/show menu on mobile */
-    display: none; /* Example: Hide menu */
-    /* position: absolute; */
-    /* top: 100%; */
-    /* left: 0; */
-    /* width: 100%; */
-    /* background-color: var(--header-background); */
-    /* flex-direction: column; */
-    /* padding: 1rem; */
-  }
 
-  .header nav ul.active { /* Class added when menu is open */
-     display: flex;
-     /* ... styles for open mobile menu ... */
-  }
-
-  .menu-toggle {
-    display: block; /* Show toggle button */
-  }
+.header-bottom-row .social-icons-header { /* Specificity */
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0; /* Prevent shrinking */
+    /* No margin needed, justify-content handles spacing */
 }
+.header-bottom-row .social-icons-header a {
+    color: #ffffff; /* White icons on dark background */
+    font-size: 20px;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+.header-bottom-row .social-icons-header a:hover {
+    color: #00bfff; /* Lighter blue hover */
+}
+
+
+.header-bottom-row .mobile-nav-toggle { /* Specificity */
+    display: none; /* Hidden on desktop */
+    order: 2; /* Now it's the second item after nav */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+.header-bottom-row .mobile-nav-toggle .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+/* Keep hamburger animation styles if you have them */
+.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+.header-bottom-row .mobile-nav-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* --- Mobile Styles --- */
+@media (max-width: 767px) { /* Adjust breakpoint */
+
+    .header-top-row {
+        font-size: 1.1rem; /* Adjust mobile top row size */
+        padding: 0.6rem 1rem;
+    }
+
+    .header-bottom-row {
+        padding: 0.5rem 1rem;
+    }
+
+    .header-bottom-row .header-container {
+        gap: 10px;
+        /* Keep justify-content: space-between; */
+    }
+
+    .header-bottom-row .main-navigation {
+        /* Mobile menu styles */
+        position: absolute;
+        top: 100%; /* Below the entire header */
+        left: 0;
+        right: 0;
+        background-color: #343a40;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 1rem 0;
+        z-index: 1000;
+        display: none;
+        order: 1; /* Nav comes first visually when open */
+    }
+    .header-bottom-row .main-navigation.is-open {
+        display: block;
+    }
+    .header-bottom-row .main-navigation ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .header-bottom-row .main-navigation a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+    }
+
+    .header-bottom-row .social-icons-header {
+        display: none; /* Keep hidden */
+    }
+
+    .header-bottom-row .mobile-nav-toggle {
+        display: block; /* Show toggle */
+        flex-shrink: 0; /* Prevent shrinking */
+        order: 2; /* Ensure toggle is after nav placeholder */
+    }
+}
+
+/* --- Desktop Styles (min-width) --- */
+@media (min-width: 768px) { /* Adjust breakpoint */
+
+    .header-bottom-row .main-navigation {
+        display: flex !important; /* Use flex for alignment */
+        align-items: center;
+        position: static;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        order: 1; /* Nav first */
+    }
+    .header-bottom-row .main-navigation ul {
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center; /* Align items vertically */
+    }
+    .header-bottom-row .main-navigation a {
+        display: inline-block;
+        width: auto;
+        padding: 0.5rem;
+    }
+
+    .header-bottom-row .social-icons-header {
+        display: flex; /* Show social icons */
+        order: 2; /* Icons second */
+    }
+
+    .header-bottom-row .mobile-nav-toggle {
+        display: none; /* Hide toggle */
+    }
+}
+
+/* Clean up any old, conflicting rules outside of the new structure */
+/* e.g., remove styles targeting .site-header > .container directly */

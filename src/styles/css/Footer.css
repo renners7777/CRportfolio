@@ -1,24 +1,112 @@
 .footer {
-  background-color: var(--footer-background); /* Use variable */
-  color: var(--footer-text-color); /* Use variable */
-  padding: 1rem 0; /* Adjust padding as needed */
-  text-align: center;
-  font-size: 0.9rem;
-  margin-top: auto; /* Helps push footer down */
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.footer p {
-  margin: 0;
-  color: var(--footer-text-color); /* Ensure paragraph inherits correctly */
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 40px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
 }
 
 .footer a {
-  color: var(--link-color); /* Use variable for links in footer */
-  text-decoration: underline; /* Optional: Underline links in footer */
-  transition: color 0.2s ease;
+    color: #4caf50;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 .footer a:hover {
-  color: var(--link-hover-color); /* Use variable */
+    color: #81c784;
+}
+
+.footer .social-icons {
+    margin-top: 15px;
+}
+
+.footer .social-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.footer p {
+    margin: 10px 0 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Style for the button in the footer */
+.privacy-policy-button {
+  background: none;
+  border: none;
+  color: var(--accent-color, #007bff); /* Use theme color */
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit; /* Match surrounding text size */
+}
+
+.privacy-policy-button:hover {
+  color: var(--text-primary, #333); /* Adjust hover color */
+}
+
+/* --- Modal Styles --- */
+
+/* Backdrop: Covers the whole screen */
+.modal-backdrop {
+  position: fixed; /* Fixed position to cover viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top */
+  padding: 1rem; /* Add padding for smaller screens */
+}
+
+/* Content Box: The actual modal window */
+.modal-content {
+  background-color: var(--card-background, #ffffff); /* Use theme variable */
+  color: var(--text-primary, #333); /* Use theme variable */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  max-width: 800px; /* Limit maximum width */
+  width: 90%; /* Responsive width */
+  max-height: 85vh; /* Limit maximum height */
+  overflow-y: auto; /* Allow scrolling for long content */
+  position: relative; /* For positioning close button if needed */
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary); /* Use theme variable */
+  text-align: center;
+}
+
+/* Style the close button inside the modal */
+.modal-content button {
+  display: block; /* Make it a block element */
+  margin: 1.5rem auto 0 auto; /* Center it with top margin */
+  padding: 0.6rem 1.2rem;
+  background-color: var(--button-background, #007bff);
+  color: var(--button-text, #ffffff);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.modal-content button:hover {
+  background-color: var(--button-hover-background, #0056b3);
+}
+
+/* Styles for the PrivacyPolicyContent component if needed */
+.modal-content .privacy-policy-content-wrapper { /* Add a wrapper if needed */
+  /* Add specific styles for the policy text if the embedded styles aren't enough */
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
