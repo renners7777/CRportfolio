@@ -6,6 +6,7 @@
   --primary-color: #007bff;         /* Primary action color */
   --secondary-color: #0056b3;       /* Primary hover */
   --card-background: #f8f9fa;        /* Slightly off-white card */
+  --background-secondary: #e9ecef;    /* ADDED: Another light gray, different from card */
   --card-border: #dee2e6;          /* Light border */
   --input-background: #ffffff;       /* White input */
   --input-border: #ced4da;          /* Standard input border */
@@ -28,6 +29,7 @@
     --primary-color: #4dabf7;         /* Lighter blue */
     --secondary-color: #1e88e5;       /* Darker blue hover */
     --card-background: #1e1e1e;        /* Dark card */
+    --background-secondary: #2c2c2e;    /* ADDED: Another dark gray, different from card */
     --card-border: #444444;          /* Dark border */
     --input-background: #2c2c2c;       /* Dark input */
     --input-border: #555555;          /* Dark input border */
