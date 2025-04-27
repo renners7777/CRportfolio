@@ -22,3 +22,23 @@
 .footer a:hover {
   color: var(--link-hover-color); /* Use variable */
 }
+
+/* ... existing styles ... */
+
+.privacy-link {
+  background: none; /* Remove default button background */
+  border: none; /* Remove default button border */
+  color: #007bff; /* Example link color */
+  cursor: pointer; /* Hand cursor on hover */
+  padding: 0; /* Remove default button padding */
+  text-decoration: underline; /* Underline to mimic a link */
+  font-size: inherit; /* Use the surrounding text size */
+  font-family: inherit; /* Use the surrounding font */
+}
+
+.privacy-link:hover {
+  color: #0056b3; /* Darker color on hover */
+  text-decoration: none; /* Optional: remove underline on hover */
+}
+
+/* ... other styles ... */
