@@ -219,5 +219,28 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Style your CTA button if you add one */
-/* .services-cta .cta-button { ... } */
+/* Style your CTA button */
+/* Uncomment and style the button */
+.services-cta .cta-button {
+  display: inline-block; /* Ensure it behaves like a button */
+  padding: 12px 25px;
+  background-color: var(--primary-color); /* Use variable */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.services-cta .cta-button:hover {
+  background-color: var(--secondary-color); /* Use variable */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.services-cta .cta-button:focus-visible {
+  outline: 2px dashed var(--secondary-color); /* Use variable */
+  outline-offset: 2px;
+}
