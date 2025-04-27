@@ -536,8 +536,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                 color: "rgb(0, 58, 250)",
                                                 fontSize: "15px",
                                             }}>
-                                            <span data-custom-class="body_text">
-                                                how we process your information
+                                            <span data-custom-class="body_text"><strong><em> how we process your information</em></strong>
                                             </span>
                                         </span>
                                     </a>
@@ -577,7 +576,8 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                 fontSize: "15px",
                                             }}>
                                             <span data-custom-class="body_text">
-                                                when and with whom we share your personal information
+                                            <strong><em> when and with whom we share your personal information
+                                            </em></strong>
                                             </span>
                                         </span>
                                     </a>
@@ -628,7 +628,8 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                 fontSize: "15px",
                                             }}>
                                             <span data-custom-class="body_text">
-                                                how we keep your information safe
+                                            <strong><em> how we keep your information safe
+                                            </em></strong>
                                             </span>
                                         </span>
                                     </a>
@@ -669,7 +670,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                 color: "rgb(0, 58, 250)",
                                                 fontSize: "15px",
                                             }}>
-                                            <span data-custom-class="body_text">your privacy rights</span>
+                                            <span data-custom-class="body_text"><strong><em> your privacy rights</em></strong></span>
                                         </span>
                                     </a>
                                     <span data-custom-class="body_text">.</span>
@@ -745,8 +746,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                 color: "rgb(0, 58, 250)",
                                                 fontSize: "15px",
                                             }}>
-                                            <span data-custom-class="body_text">
-                                                Review the Privacy Notice in full
+                                            <span data-custom-class="body_text"><strong><em>  Review the Privacy Notice in full</em></strong>
                                             </span>
                                         </span>
                                     </a>
@@ -3370,9 +3370,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                                                                                         color: "rgb(0, 58, 250)",
                                                                                                                         fontSize: "15px",
                                                                                                                     }}>
-                                                                                                                    <span data-custom-class="body_text">
-                                                                                                                        withdrawing your consent
-                                                                                                                    </span>
+                                                                                                                    <span data-custom-class="body_text"><strong><em> withdrawing your consent</em></strong></span>
                                                                                                                 </span>
                                                                                                             </a>
                                                                                                             <span data-custom-class="body_text">
@@ -7284,8 +7282,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                                                                                                                             "15px",
                                                                                                                                                     }}>
                                                                                                                                                     <span data-custom-class="body_text">
-                                                                                                                                                        <bdt className="question">
-                                                                                                                                                            S10 1LF
+                                                                                                                                                        <bdt className="question"> S10 1LF
                                                                                                                                                         </bdt>
                                                                                                                                                     </span>
                                                                                                                                                 </span>
@@ -7535,11 +7532,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                                                                                                                                                                 data-custom-class="link"
                                                                                                                                                                 href="https://app.termly.io/notify/cfd49fdc-8eab-4b37-81b5-358d5e7171c9"
                                                                                                                                                                 rel="noopener noreferrer"
-                                                                                                                                                                target="_blank">
-                                                                                                                                                                data
-                                                                                                                                                                subject
-                                                                                                                                                                access
-                                                                                                                                                                request
+                                                                                                                                                                target="_blank"> data subject access request
                                                                                                                                                             </a>
                                                                                                                                                         </span>
                                                                                                                                                     </span>
