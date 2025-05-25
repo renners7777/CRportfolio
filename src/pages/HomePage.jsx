@@ -13,7 +13,6 @@ import htmlTechnicalPageClone from '../assets/Screenshot 2025-04-13 at 16-02-12 
 import christmasAPIImage from '../assets/christmasAPIImage.avif';
 import crEmojisAPI from '../assets/CR-emojis.png';
 import crGuideToSheffield from '../assets/CRGuideToSheffield.png';
-import ukSWLegislationChatbot from '../assets/Screenshot 2025-04-25 at 22-29-45 UK Social Work Legislation Chatbot.png';
 import socialCareTestSiteImage from '../assets/photo-1464998857633-50e59fbf2fe6.avif';
 
 const INITIAL_ITEMS_VISIBLE = 6; // Define how many items to show initially
@@ -26,8 +25,7 @@ const HomePage = () => {
         { id: 3, title: 'Christmas API', description: 'An API that generates Christmas-themed data.', link: 'https://christmas-api.netlify.app/', imageUrl: christmasAPIImage },
         { id: 4, title: 'CR Emojis', description: 'An API that allows you to add your own emojis to your projects.', link: 'https://cr-emojis.netlify.app/', imageUrl: crEmojisAPI },
         { id: 5, title: 'CR Guide to Sheffield', description: 'A guide to Sheffield, including places to visit and things to do.', link: 'https://crsheffieldhometown.netlify.app/', imageUrl: crGuideToSheffield },
-        { id: 6, title: 'UK Social Work Legislation Chatbot', description: 'Currently in development, this chatbot will provide information on UK social work legislation.', link: 'https://uk-socialwork-legislation-chatbot.netlify.app/', imageUrl: ukSWLegislationChatbot },
-        { id: 7, title: 'Social Care Test Site', description: 'Made using Bolt.new, this site is a test site for social care.', link: 'https://bolt-socialcaretestsite.netlify.app/', imageUrl: socialCareTestSiteImage },
+        { id: 6, title: 'Social Care Test Site', description: 'Made using Bolt.new, this site is a test site for social care.', link: 'https://bolt-socialcaretestsite.netlify.app/', imageUrl: socialCareTestSiteImage },
     ];
 
     // State to control visible items
