@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // Import components used in HomePage
 import Home from '../components/Home';
@@ -50,6 +51,16 @@ const HomePage = () => {
 
             {/* Add a horizontal line break */}
             <hr style={{ margin: '40px 0' }} /> {/* Optional: Add some margin */}
+
+            <div className="products-cta container" style={{ textAlign: 'center', marginBottom: '40px' }}>
+                <h2>Explore current product work</h2>
+                <p style={{ maxWidth: '700px', margin: '0 auto 20px' }}>
+                    Learn more about the Stroke Survivor Companion app and the Planning Center Online AI product currently in development.
+                </p>
+                <Link to="/products" className="cta-button" style={{ display: 'inline-block' }}>
+                    View Products
+                </Link>
+            </div>
 
             {/* 3. Render Portfolio Section */}
             <div className="portfolio-section container" style={{ paddingTop: '0', paddingBottom: '40px' }}> {/* Adjusted padding */}

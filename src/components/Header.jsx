@@ -42,7 +42,7 @@ const Header = () => {
                         {/* Step 3: Add conditional 'active' class to ul */}
                         <ul className={isMobileMenuOpen ? 'active' : ''}>
                             <li><NavLink to="/" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink></li>
-                            <li><NavLink to="/services" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Services</NavLink></li>
+                            <li><NavLink to="/products" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Products</NavLink></li>
                             <li><NavLink to="/contact" onClick={closeMobileMenu} className={({ isActive }) => isActive ? 'active' : ''}>Contact</NavLink></li>
                         </ul>
                     </nav>
