@@ -25,7 +25,7 @@ const Contact = () => {
                     <p>Schedule time quickly to review your concept, roadmap, or integration needs.</p>
                     <p style={{ marginTop: '24px' }}>
                         <a
-                            href="https://calendly.com/chrisrenshaw79"
+                            href="https://calendly.com/chrisrenshaw79-06al/30min"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="calendly-link-button"
