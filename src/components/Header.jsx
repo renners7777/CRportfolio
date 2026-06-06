@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
-import { SiPeerlist } from "react-icons/si";
+import { FaGithub } from 'react-icons/fa';
+import { SiPeerlist } from 'react-icons/si';
 import '../styles/css/Header.css';
 
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // URLs for social links
-    const linkedinUrl = 'https://www.linkedin.com/in/chris-renshaw-renners7777/';
     const githubUrl = 'https://github.com/renners7777';
-    const twitterUrl = 'https://x.com/renners7777';
     const peerlistUrl = 'https://peerlist.io/renners7777';
 
     const toggleMobileMenu = () => {
@@ -49,9 +47,7 @@ const Header = () => {
 
                     {/* Social Icons Section */}
                     <div className="social-icons-header">
-                        <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile"><FaLinkedin /></a>
                         <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile"><FaGithub /></a>
-                        <a href={twitterUrl} target="_blank" rel="noopener noreferrer" aria-label="Twitter Profile"><FaTwitter /></a>
                         <a href={peerlistUrl} target="_blank" rel="noopener noreferrer" aria-label="Peerlist Profile"><SiPeerlist /></a>
                     </div>
 
