@@ -18,22 +18,24 @@ const Products = () => {
         <div className="service-step">
           <img src={talkImageUrl} alt="Stroke Survivor Companion" className="service-step-image" />
           <div className="service-step-content">
-            <h3>Stroke Survivor Companion</h3>
+            <h3><Link to="/products/strokesurvivorcompanion">Stroke Survivor Companion</Link></h3>
             <p>
               A mobile-first companion app designed to support stroke survivors with personalized recovery guidance, progress tracking, and easy access to resources. Google Play launch is pending, and the app is being built with accessibility and practical support in mind.
             </p>
             <p><strong>Status:</strong> Pre-launch placeholder for the upcoming Google Play release.</p>
+            <Link to="/products/strokesurvivorcompanion" className="cta-button" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
           </div>
         </div>
 
         <div className="service-step">
-          <img src={buildImageUrl} alt="Planning Center Online AI" className="service-step-image" />
+          <img src={buildImageUrl} alt="WorshipFlow AI" className="service-step-image" />
           <div className="service-step-content">
-            <h3>Planning Center Online AI</h3>
+            <h3><Link to="/products/worshipflow-ai">WorshipFlow AI</Link></h3>
             <p>
               A SaaS AI assistant concept for Planning Center Online that helps teams automate workflows, generate planning insights, and manage event data more intelligently. This product is currently in planning mode and available as a placeholder offering.
             </p>
             <p><strong>Status:</strong> Early-stage AI SaaS placeholder for future integration work.</p>
+            <Link to="/products/worshipflow-ai" className="cta-button" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
           </div>
         </div>
 
