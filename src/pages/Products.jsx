@@ -5,8 +5,6 @@ import '../styles/css/Services.css';
 import talkImageUrl from '../assets/People-talking.avif';
 import buildImageUrl from '../assets/Code-on-screen.avif';
 import launchImageUrl from '../assets/website-success.avif';
-import { Link } from 'react-router-dom';
-
 
 const Products = () => {
   return (
@@ -37,7 +35,7 @@ const Products = () => {
               A SaaS AI assistant concept for Planning Center Online that helps teams automate workflows, generate planning insights, and manage event data more intelligently. This product is currently in planning mode and available as a placeholder offering.
             </p>
             <p><strong>Status:</strong> Early-stage AI SaaS placeholder for future integration work.</p>
-            <Link to="/products/worshipflow-ai" className="cta-button" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
+            <Link to="/worshipflow-ai" className="cta-button" style={{ display: 'inline-block', marginTop: '1rem' }}>Learn More</Link>
           </div>
         </div>
 
