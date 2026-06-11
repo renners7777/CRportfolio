@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/css/Services.css';
 
 import talkImageUrl from '../assets/People-talking.avif';
-import worshipFlowImageUrl from '../assets/Worshipflow_logo.png';
+import worshipFlowImageUrl from '../assets/worshipflow_logo_256.png';
 import launchImageUrl from '../assets/website-success.avif';
 
 const Products = () => {
