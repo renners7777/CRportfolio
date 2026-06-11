@@ -19,10 +19,10 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/worshipflow-ai" element={<WorshipflowAI />} />
-            
-            {/* Alias route to catch old links or manual URL entries */}
             <Route path="/products/worshipflow-ai" element={<WorshipflowAI />} />
+            
+            {/* Catch old links redirect */}
+            <Route path="/worshipflow-ai" element={<WorshipflowAI />} />
             
             {/* Catch-all 404 Route so missing routes don't show a blank screen */}
             <Route path="*" element={
