@@ -10,6 +10,7 @@ import PortfolioItem from "../components/PortfolioItem.jsx";
 import '../styles/css/PortfolioPage.css'; // Import portfolio styles
 // Import portfolio images
 import churchMusicImage from '../assets/photo-1663619079733-c22429418bc2.avif';
+import StTimsMusicPlannerImage from '../assets/StTimsMusicPlanner.avif'; // Placeholder image, replace with actual
 
 
 const INITIAL_ITEMS_VISIBLE = 6; // Define how many items to show initially
@@ -18,7 +19,7 @@ const HomePage = () => {
     // Define portfolio items array (copied from PortfolioPage.jsx)
     const portfolioItems = [
         { id: 1, title: 'Church Music Project', description: 'Producing a website to share music resources for church musicians.', link: 'https://st-timothy-s-church-song-planner-and-tracker-198390885385.europe-west1.run.app/', imageUrl: churchMusicImage },
-      
+        { id: 2, title: 'St. Timothy\'s Music Planner', description: 'A planner for managing music for St. Timothy\'s Church.', link: 'https://st-timothy-s-church-song-planner-and-tracker-198390885385.europe-west1.run.app/', imageUrl: StTimsMusicPlannerImage },
     ];
 
     // State to control visible items
