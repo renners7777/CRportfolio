@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/css/Services.css';
 
 import talkImageUrl from '../assets/People-talking.avif';
-import buildImageUrl from '../assets/Code-on-screen.avif';
+import worshipFlowImageUrl from '../assets/Worshipflow_logo.png';
 import launchImageUrl from '../assets/website-success.avif';
 
 const Products = () => {
@@ -28,7 +28,7 @@ const Products = () => {
         </div>
 
         <div className="service-step">
-          <img src={buildImageUrl} alt="WorshipFlow AI" className="service-step-image" />
+          <img src={worshipFlowImageUrl} alt="WorshipFlow AI" className="service-step-image" />
           <div className="service-step-content">
             <h3><Link to="/products/worshipflow-ai">WorshipFlow AI</Link></h3>
             <p>
