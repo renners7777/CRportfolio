@@ -53,12 +53,12 @@ const HomePage = () => {
             <hr style={{ margin: '40px 0' }} /> {/* Optional: Add some margin */}
 
             <div className="products-cta container" style={{ textAlign: 'center', marginBottom: '40px' }}>
-                <h2>Explore current product work</h2>
+                <h2>Current Projects</h2>
                 <p style={{ maxWidth: '700px', margin: '0 auto 20px' }}>
-                    Learn more about the Stroke Survivor Companion app and the Planning Center Online AI product currently in development.
+                    Learn more about the Stroke Survivor Companion app and WorshipFlow AI product currently in development.
                 </p>
                 <Link to="/products" className="cta-button" style={{ display: 'inline-block' }}>
-                    View Products
+                    View Development Products
                 </Link>
             </div>
 
