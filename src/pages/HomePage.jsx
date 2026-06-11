@@ -9,7 +9,6 @@ import Skills from '../components/Skills';
 import PortfolioItem from "../components/PortfolioItem.jsx";
 import '../styles/css/PortfolioPage.css'; // Import portfolio styles
 // Import portfolio images
-import churchMusicImage from '../assets/photo-1663619079733-c22429418bc2.avif';
 import StTimsMusicPlannerImage from '../assets/StTimsMusicPlanner.avif'; // Placeholder image, replace with actual
 
 
