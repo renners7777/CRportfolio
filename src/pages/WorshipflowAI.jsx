@@ -6,7 +6,7 @@ const WorshipflowAI = () => {
         <div className="worshipflow-page">
             {/* Hero Section */}
             <header className="hero">
-                <h1>Simplify Liturgical Administration.</h1>
+                <h1>WorshipFlow AI</h1>
                 <p>
                     WorshipFlow AI leverages state-of-the-art LLM intelligence to automatically curate sermon setlists, provision musical key/tempo arrangements, and script volunteer rehearsal briefs—perfectly synchronized with your Planning Center Services catalog.
                 </p>
