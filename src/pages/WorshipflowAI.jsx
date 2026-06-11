@@ -11,9 +11,6 @@ const WorshipflowAI = () => {
                     WorshipFlow AI leverages state-of-the-art LLM intelligence to automatically curate sermon setlists, provision musical key/tempo arrangements, and script volunteer rehearsal briefs—perfectly synchronized with your Planning Center Services catalog.
                 </p>
                 <div className="hero-buttons">
-                    <a href="#login" className="btn btn-primary">
-                        <i className="fa-solid fa-bolt"></i> Start 30-Day Free Trial
-                    </a>
                     <a href="#features" className="btn btn-secondary">
                         <i className="fa-solid fa-magnifying-glass"></i> Explore Features
                     </a>
@@ -88,6 +85,9 @@ const WorshipflowAI = () => {
                 <div className="section-header">
                     <h2>Simple, Tiered Pricing</h2>
                     <p>Upgrade your workflows. Select the billing plan that aligns with your weekly music rotation.</p>
+                    <p style={{ color: 'var(--wf-primary)', fontWeight: '500', marginTop: '10px' }}>
+                        Every plan includes a 30-day free trial. You will have a full month to use the product free of charge before any payment is required.
+                    </p>
                 </div>
 
                 <div className="pricing-grid">
