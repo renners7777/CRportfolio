@@ -20,6 +20,17 @@ const App = () => {
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/worshipflow-ai" element={<WorshipflowAI />} />
+            
+            {/* Alias route to catch old links or manual URL entries */}
+            <Route path="/products/worshipflow-ai" element={<WorshipflowAI />} />
+            
+            {/* Catch-all 404 Route so missing routes don't show a blank screen */}
+            <Route path="*" element={
+              <div className="container" style={{ padding: '100px 20px', textAlign: 'center', minHeight: '60vh' }}>
+                <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>404 - Page Not Found</h2>
+                <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>The route you are trying to visit does not exist.</p>
+              </div>
+            } />
           </Routes>
         </main>
         <Footer />
