@@ -9,7 +9,7 @@ import Skills from '../components/Skills';
 import PortfolioItem from "../components/PortfolioItem.jsx";
 import '../styles/css/PortfolioPage.css'; // Import portfolio styles
 // Import portfolio images
-import StTimsMusicPlannerImage from '../assets/StTimsMusicPlanner.png';
+import StTimsMusicPlannerImage from '../assets/StTimsMusicPlanner1.png';
 import SocialWorkSupervisorAgent from '../assets/SocialWorkSupervisorAgent.png';
 
 const INITIAL_ITEMS_VISIBLE = 6; // Define how many items to show initially
