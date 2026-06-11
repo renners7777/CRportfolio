@@ -9,8 +9,8 @@ import Skills from '../components/Skills';
 import PortfolioItem from "../components/PortfolioItem.jsx";
 import '../styles/css/PortfolioPage.css'; // Import portfolio styles
 // Import portfolio images
-import StTimsMusicPlannerImage from '../assets/StTimsMusicPlanner'; // Placeholder image, replace with actual
-
+import StTimsMusicPlannerImage from '../assets/StTimsMusicPlanner.png';
+import SocialWorkSupervisorAgent from '../assets/SocialWorkSupervisorAgent.png';
 
 const INITIAL_ITEMS_VISIBLE = 6; // Define how many items to show initially
 
@@ -18,6 +18,7 @@ const HomePage = () => {
     // Define portfolio items array (copied from PortfolioPage.jsx)
     const portfolioItems = [
         { id: 1, title: 'Church Music Project', description: 'Producing a website to share music resources for church musicians.', link: 'https://st-timothy-s-church-song-planner-and-tracker-198390885385.europe-west1.run.app/', imageUrl: StTimsMusicPlannerImage },
+        { id: 2, title: 'Social Work Supervisor Agent', description: 'An AI agent designed to assist social work supervisors in managing their teams and providing support to their supervisees.', link: 'https://console.cloud.google.com/agent-platform/studio/agent-designer/edit/agent_1779550783933?project=social-work-triage-agent&session=&userId=user-1779550783933', imageUrl: SocialWorkSupervisorAgent },
     ];
 
     // State to control visible items
