@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+.worshipflow-page {
+    --wf-bg-card: #11131c;
+    --wf-bg-input: #07080c;
+    --wf-primary: #00adb5;
+    --wf-primary-glow: rgba(0, 173, 181, 0.4);
+    --wf-primary-hover: #00fff2;
+    --wf-accent: #bc70ff;
+    --wf-accent-glow: rgba(188, 112, 255, 0.4);
+    --wf-text-main: #f3f4f6;
+    --wf-text-muted: #9ca3af;
+    --wf-border: #1f2335;
+    --wf-border-glow: #31364f;
+    --wf-success: #10b981;
+
+    font-family: 'Outfit', sans-serif;
+    background-color: #0a0b10;
+    color: var(--wf-text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+    padding-bottom: 40px; /* spacing above main portfolio footer */
+}
+
+/* Buttons */
+.worshipflow-page .btn {
+    padding: 12px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.worshipflow-page .btn-primary {
+    background-color: var(--wf-primary);
+    color: #0a0b10;
+}
+
+.worshipflow-page .btn-primary:hover {
+    background-color: var(--wf-primary-hover);
+    box-shadow: 0 4px 20px var(--wf-primary-glow);
+    transform: translateY(-2px);
+}
+
+.worshipflow-page .btn-secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid var(--wf-border);
+}
+
+.worshipflow-page .btn-secondary:hover {
+    border-color: var(--wf-border-glow);
+    background-color: rgba(255,255,255,0.02);
+}
+
+/* Hero Section */
+.worshipflow-page .hero {
+    position: relative;
+    padding: 100px 20px 100px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 20%, rgba(0, 173, 181, 0.1) 0%, transparent 60%);
+}
+
+.worshipflow-page .hero h1 {
+    font-size: 3.5em;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #fff 20%, var(--wf-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1.2;
+}
+
+.worshipflow-page .hero p {
+    font-size: 1.25em;
+    color: var(--wf-text-muted);
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+}
+
+.worshipflow-page .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Features Section */
+.worshipflow-page .features-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.worshipflow-page .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.worshipflow-page .section-header h2 {
+    font-size: 2.5em;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    color: #fff;
+}
+
+.worshipflow-page .section-header p {
+    color: var(--wf-text-muted);
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.worshipflow-page .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .worshipflow-page .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .worshipflow-page .hero h1 {
+        font-size: 2.5em;
+    }
+}
+
+.worshipflow-page .feature-card {
+    background-color: var(--wf-bg-card);
+    border: 1px solid var(--wf-border);
+    border-radius: 16px;
+    padding: 35px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.worshipflow-page .feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--wf-border-glow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.worshipflow-page .feature-icon {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--wf-primary);
+}
+
+.worshipflow-page .feature-card:nth-child(even) .feature-icon {
+    color: var(--wf-accent);
+}
+
+.worshipflow-page .feature-card h3 {
+    font-size: 1.4em;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    color: #fff;
+}
+
+.worshipflow-page .feature-card p {
+    color: var(--wf-text-muted);
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Integration Sync Section */
+.worshipflow-page .integration-section {
+    background-color: rgba(17, 19, 28, 0.5);
+    border-top: 1px solid var(--wf-border);
+    border-bottom: 1px solid var(--wf-border);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.worshipflow-page .integration-container {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.worshipflow-page .integration-logos {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 10px;
+}
+
+.worshipflow-page .integration-logo-box {
+    background-color: var(--wf-bg-card);
+    border: 1px solid var(--wf-border);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5em;
+    color: var(--wf-primary);
+    box-shadow: 0 0 20px rgba(0, 173, 181, 0.1);
+}
+
+.worshipflow-page .integration-logo-box.pco {
+    color: #8cc63f;
+    box-shadow: 0 0 20px rgba(140, 198, 63, 0.1);
+}
+
+.worshipflow-page .connector-line {
+    height: 2px;
+    width: 80px;
+    background: linear-gradient(90deg, var(--wf-primary) 0%, #8cc63f 100%);
+    position: relative;
+}
+
+.worshipflow-page .connector-line i {
+    position: absolute;
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #8cc63f;
+}
+
+/* Pricing Section */
+.worshipflow-page .pricing-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.worshipflow-page .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .worshipflow-page .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+.worshipflow-page .price-card {
+    background-color: var(--wf-bg-card);
+    border: 1px solid var(--wf-border);
+    border-radius: 16px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.worshipflow-page .price-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--wf-border-glow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.worshipflow-page .price-card.featured {
+    border-color: var(--wf-primary);
+    box-shadow: 0 4px 25px var(--wf-primary-glow);
+}
+
+.worshipflow-page .featured-tag {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, var(--wf-primary) 0%, var(--wf-accent) 100%);
+    color: #0a0b10;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.worshipflow-page .plan-name {
+    font-size: 1.4em;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    color: #fff;
+}
+
+.worshipflow-page .plan-desc {
+    color: var(--wf-text-muted);
+    font-size: 0.9em;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    min-height: 45px;
+}
+
+.worshipflow-page .price-container {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.worshipflow-page .price-amount {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: #fff;
+}
+
+.worshipflow-page .price-period {
+    color: var(--wf-text-muted);
+    font-size: 1em;
+}
+
+.worshipflow-page .features-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.worshipflow-page .features-list li {
+    font-size: 0.92em;
+    color: var(--wf-text-main);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.worshipflow-page .features-list li i {
+    color: var(--wf-success);
+    font-size: 1.1em;
+}
+
+.worshipflow-page .features-list li.disabled {
+    color: var(--wf-text-muted);
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.worshipflow-page .features-list li.disabled i {
+    color: var(--wf-text-muted);
+}

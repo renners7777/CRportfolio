@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import HomePage from './pages/HomePage';
 import Products from './pages/Products';
 import Contact from './components/Contact';
+import WorshipflowAI from './pages/WorshipflowAI';
 import BackToTopButton from './components/BackToTopButton';
 import './styles/css/App.css';
 
@@ -18,6 +19,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/products" element={<Products />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/worshipflow-ai" element={<WorshipflowAI />} />
           </Routes>
         </main>
         <Footer />
