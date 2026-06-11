@@ -9,9 +9,9 @@ import launchImageUrl from '../assets/website-success.avif';
 const Products = () => {
   return (
     <section id="products-overview" className="services-section container">
-      <h2>Products In Progress</h2>
+      <h2>Products In Development</h2>
       <p className="section-intro">
-        Placeholder content for pre-launch products. These are the ideas I'm currently shaping:
+        These are the ideas I'm currently shaping:
       </p>
 
       <div className="service-steps-simplified">
