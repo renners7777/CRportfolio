@@ -10,23 +10,15 @@ import PortfolioItem from "../components/PortfolioItem.jsx";
 import '../styles/css/PortfolioPage.css'; // Import portfolio styles
 // Import portfolio images
 import churchMusicImage from '../assets/photo-1663619079733-c22429418bc2.avif';
-import htmlTechnicalPageClone from '../assets/Screenshot 2025-04-13 at 16-02-12 HTML technical documentation page.png';
-import christmasAPIImage from '../assets/christmasAPIImage.avif';
-import crEmojisAPI from '../assets/CR-emojis.png';
-import crGuideToSheffield from '../assets/CRGuideToSheffield.png';
-import socialCareTestSiteImage from '../assets/photo-1464998857633-50e59fbf2fe6.avif';
+
 
 const INITIAL_ITEMS_VISIBLE = 6; // Define how many items to show initially
 
 const HomePage = () => {
     // Define portfolio items array (copied from PortfolioPage.jsx)
     const portfolioItems = [
-        { id: 1, title: 'Church Music Project', description: 'Producing a website to share music resources for church musicians.', link: 'https://sttimssheffieldmusic.netlify.app/', imageUrl: churchMusicImage },
-        { id: 2, title: 'FCC Technical Documentation Page', description: 'This is a clone of MDN HTML documentation page.', link: 'https://fcc-technical-documentation-page-cr.netlify.app/', imageUrl: htmlTechnicalPageClone },
-        { id: 3, title: 'Christmas API', description: 'An API that generates Christmas-themed data.', link: 'https://christmas-api.netlify.app/', imageUrl: christmasAPIImage },
-        { id: 4, title: 'CR Emojis', description: 'An API that allows you to add your own emojis to your projects.', link: 'https://cr-emojis.netlify.app/', imageUrl: crEmojisAPI },
-        { id: 5, title: 'CR Guide to Sheffield', description: 'A guide to Sheffield, including places to visit and things to do.', link: 'https://crsheffieldhometown.netlify.app/', imageUrl: crGuideToSheffield },
-        { id: 6, title: 'Social Care Test Site', description: 'Made using Bolt.new, this site is a test site for social care.', link: 'https://bolt-socialcaretestsite.netlify.app/', imageUrl: socialCareTestSiteImage },
+        { id: 1, title: 'Church Music Project', description: 'Producing a website to share music resources for church musicians.', link: 'https://st-timothy-s-church-song-planner-and-tracker-198390885385.europe-west1.run.app/', imageUrl: churchMusicImage },
+      
     ];
 
     // State to control visible items
