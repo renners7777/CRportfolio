@@ -15,7 +15,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="container footer-content">
                 <p>&copy; {currentYear} Chris Renshaw. All rights reserved.</p>
-                <div className="footer-links">
+                <div className="footer-links" style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
                     <Link to="/products" className="footer-link">Products</Link>
                     <button type="button" onClick={openModal} className="privacy-link">
                         Privacy Policy
