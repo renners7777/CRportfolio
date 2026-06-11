@@ -6,7 +6,7 @@ const Contact = () => {
         <section className="contact-section container" id="contact">
             <h2>Contact Me</h2>
             <p className="contact-intro">
-                Interested in Stroke Survivor Companion, a Planning Center Online AI product, or another idea? Email me directly or book a meeting below.
+                Interested in Stroke Survivor Companion, WorshipFlow AI, or another idea? Email me directly or book a meeting below.
             </p>
 
             <div className="contact-details-layout" style={{ marginTop: '2rem', paddingTop: '0' }}>
