@@ -1,28 +1,26 @@
 import React from 'react';
-import '../styles/css/Skills.css'; // Import the CSS file
+import '../styles/css/Skills.css';
 
 const Skills = () => {
     const skills = [
-        'JavaScript',
+        'AI Model Training',
+        'RLHF & Human Evaluation',
+        'Instruction Tuning (SFT)',
+        'Prompt Engineering',
+        'Model Benchmarking',
+        'Python',
+        'JavaScript (ES6+)',
         'React',
         'Node.js',
-        'CSS',
-        'HTML',
-        'Git',
-        "GitHub",
-        "MongoDB",
-        'Express',
-        'REST APIs',
-        'Tailwind CSS',
-        'Supabase', // Added Supabase
-        'Vite'      // Added Vite
+        'REST APIs & Integrations',
+        'Appwrite / Cloud Services',
+        'Git & Version Control'
     ];
 
     return (
-        // Use a section tag
-        <section className="skills-section" id="skills"> {/* Added id */}
+        <section className="skills-section" id="skills">
             <div className="container">
-                <h2>My Skills</h2>
+                <h2>Skills & Technical Capabilities</h2>
                 <ul className="skills-list">
                     {skills.map((skill, index) => (
                         <li key={index}>{skill}</li>
